@@ -32,5 +32,3 @@ if __name__ == '__main__':
         freezer.freeze()
     else:
         app.run(port=8000)
-        
-    

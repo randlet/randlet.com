@@ -1,3 +1,5 @@
+*.wpr
+*.wpu
 .env/
 *~
 *pyc
