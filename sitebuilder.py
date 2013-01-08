@@ -1,3 +1,4 @@
+import collections
 import sys
 
 from flask import Flask, render_template
@@ -13,6 +14,14 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 
+@app.context_processor
+def inject_tags():
+    tags = []
+    for p in pages:
+        tags.extend(p.meta.get('tags',[]))
+    tags = [x[0] for x in collections.Counter(tags).most_common(10)]
+    return {"tags":tags}
+
 @app.route('/')
 def index():
     return render_template('index.html', pages=pages)
@@ -21,6 +30,14 @@ def index():
 def tag(tag):
     tagged = [p for p in pages if tag in p.meta.get('tags', [])]
     return render_template('tag.html', pages=tagged, tag=tag)
+
+@app.route('/projects/')
+def projects():
+    return render_template('index.html', pages=pages)
+
+@app.route('/blog/')
+def  blog():
+    return render_template('index.html', pages=pages)
 
 @app.route('/<path:path>/')
 def page(path):
