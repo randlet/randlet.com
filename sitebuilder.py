@@ -24,6 +24,7 @@ def inject_tags():
 
 @app.route('/')
 def index():
+    most_recent = pages
     return render_template('index.html', pages=pages)
 
 @app.route('/tag/<string:tag>/')

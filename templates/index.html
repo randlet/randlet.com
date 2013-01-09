@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block discover %}{% endblock %}
 {% block content %}
     <div class="span12">
         <h3>Most Recent Blog Post</h3>
@@ -8,10 +8,5 @@
     <div class="span12">
         {{pages|first}}
     </div>
-
-    <h2>List of stuff</h2>
-    {% with pages=pages  %}
-        {% include "_list.html" %}
-    {% endwith %}
 
 {% endblock content %}
