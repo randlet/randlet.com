@@ -17,7 +17,7 @@ $(".discover a").click(function(e){
 });
 
 
-/* Image slideshow */
+/* Image slideshow 
 
 $('#s1').cycle({ 
     fx:    'fade', 
@@ -25,7 +25,7 @@ $('#s1').cycle({
     timeout: 300,
     pause: 1
  });
-
+*/
 /* Support */
 
 $("#slist a").click(function(e){

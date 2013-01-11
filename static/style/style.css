@@ -1018,6 +1018,7 @@ padding-top: 5px;
 	padding: 5px 0px;
 }
 
+
 /* Discover */
 
 .dis-nav a{
@@ -1276,7 +1277,9 @@ padding-bottom:0px !important;
 	line-height: 160px;
 	color: #888;
 }
-
+.big-text.white {
+	color:#FFF;
+}
 /* Footer */
 
 footer{
@@ -1407,4 +1410,18 @@ footer .copy{
 
 @media (max-width: 979px){
 
+}
+
+ul.styled{
+	list-style-type: circle;
+	margin-left: 20px;
+}
+ul.styled li{
+	margin-left: 20px;
+}
+
+
+.project-title {
+	font-size:50px;
+	line-height:60px;
 }

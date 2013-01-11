@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block page_title %}Projects{% endblock %}
+{% block description %}Programming and other projects{% endblock %}
+{% block keywords %}projects programming physics {%endblock%}
+
+{% block hero_content %}
+    <h2>Projects</h2>
+    <h6 class="grey">A sampling of my personal and professional projects</h6>
+{% endblock %}
+
+{% block content %}
+    {% for project,props in projects.iteritems() %}
+         <div class="row">
+            <div class="span6">
+               <div class="col-l">
+                 <div class="big-text">{{props.symbol}}</div>
+               </div>
+
+               <div class="col-r">
+                 <div class="sinfo">
+                    <h4>{{props.title}}</h4>
+                    <h6 class="grey">{{props.subtitle}}</h6>
+                    <div class="">
+                        {% for l in props.links%}
+                            <a href="{{l.href}}" class="tip" data-original-title="{{l.title}}"><i class="{{l.icon}}"></i>{{l.text}}</a>
+                        {% endfor %}
+                    </div>
+                 </div>
+               </div>
+
+               <div class="clearfix"></div>
+            </div>
+            <div class="span6">
+               <p class="ainfo">{{props.description}}</p>
+               <div class="button"><a href="{{url_for('project',project=project)}}">Project Details</a></div>
+            </div>
+         </div>
+         {% if not loop.last %}
+            <hr/>    
+         {% endif %}
+    {% endfor %}
+{% endblock %}

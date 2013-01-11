@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block page_title %}Orbis{% endblock %}
+{% block hero_content%}
+    <div class="row">
+        <div class="span12">            
+            <h1>Orbis</h1>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="span8">            
+        <p> 
+            Orbis is a piece of Python software I wrote for performing <a href="http://en.wikipedia.org/wiki/Huckel_method">Simple Huckel
+            Molecular Orbital</a> analysis calculations. Orbis is designed to be an
+            easy to use method for estimating a variety of molecular orbital
+            properties including: 
+        </p>
+        
+            <ul class="styled">
+                <li>molecular orbital energies (SHMO eigenvalues and eigenvectors)</li>
+                <li>pi bond orders</li>
+                <li>net charges per atom</li>
+                <li>atom-atom polarizabilities</li>
+                <li>atom-bond polarizabilities</li>
+            </ul>
+        <p>            
+            Orbis comes pre-loaded with a number of different atom and bond types but
+            also allows for custom atom and bond types to be created. A simple sketchpad
+            allows you to draw molecules and watch the eigenvalues, eigenvectors, energy
+            level diagrams, molecular orbitals and more be calculated on the fly. 
+        </p>
+    
+        <p>  
+            Orbis also has a number of other useful features including:
+            <ul class="styled">
+                <li>Interactive Energy Level Diagrams : Click an energy level to see the corresponding molecular orbital and eigen vectors</li>
+                <li>Handles larges complex molecules with different atom types 
+                <li>Save your sessions to update later</li>
+                <li>Export your results to a spreadsheet format</li>
+                <li>Import a Huckel matrix from a text file and Orbis will automatically draw your molecule!</li>
+                <li>Import molecules from <a href="http://en.wikipedia.org/wiki/MDL_Molfile">Molfiles (.mol)</a> and <a href="http://en.wikipedia.org/wiki/XYZ_file_format">XYZ (.xyz)</a> chemical file formats.</li>
+                <li>General matrix solver mode for solving problems other than pure pi-electron systems.
+            </ul>
+    
+        </p>
+    </div>
+    <div class="span4">
+        <div class="home-product">
+            <h3>Downloads</h3>
+            <p>Download either a Windows installer for the original version of Orbis or check out an upcomping (incomplete) open source version on github.</p>
+            <div class="clearfix"></div>
+        </div>    
+        <div class="dis-nav button">
+            <a href="{{url_for('static', filename="downloads/install_orbis.exe")}}" id="one"><i class="icon-download"></i> Installer</a> 
+            <a href="https://github.com/randlet/Orbis" id="one"><i class="icon-github"></i> Source Code</a> 
+        </div>    
+        <hr/>
+        <h3>Orbis in action...</h3>
+
+        <p> Check out some of the <a href="./screenshots.html"> screenshots</a>
+        of Orbis in action or watch this short video showing how you would
+        create a simple <a href="http://en.wikipedia.org/wiki/Benzene">benzene</a> ring and then
+        convert it to
+        <href="http://en.wikipedia.org/wiki/Pyridine">pyridine</a> by changing
+        one of the atom types. <br/><i>Watch in HD full screen for best effect</i></p>
+
+        <p>
+            <iframe width="325" height="183" src="http://www.youtube.com/embed/fjgywct4AGY?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+        
+        <p>Or this video of Orbis displaying the 24 membered molecule Coronene</p>
+
+        <p>
+            <iframe width="325" height="183" src="http://www.youtube.com/embed/W9lWjspNj-Y?rel=0" frameborder="0" allowfullscreen></iframe>
+        </p>
+
+    </div>    
+</div>
+{% endblock %}

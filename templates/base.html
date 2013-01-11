@@ -3,32 +3,32 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Randle Taylor | Programming, Science &amp; Life</title>
+    <title>Randle Taylor | {% block page_title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{%block description%}{%endblock%}">
+    <meta name="keywords" content="{%block keywords%}{% endblock%}">
+    <meta name="author" content="Randle Taylor">
 
 
     <!-- Stylesheets -->
-    <link rel=stylesheet type=text/css href=".{{ url_for('static', filename='style/bootstrap.css') }}">
-    <link rel=stylesheet type=text/css href=".{{ url_for('static', filename='style/font-awesome.css') }}">
-    <link rel=stylesheet type=text/css href=".{{ url_for('static', filename='style/prettyPhoto.css') }}">
-    <link rel=stylesheet type=text/css href=".{{ url_for('static', filename='style/slider.css') }}">
-    <link rel=stylesheet type=text/css href=".{{ url_for('static', filename='style/style.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bootstrap.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/font-awesome.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/prettyPhoto.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/slider.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/style.css') }}">
 
     <!-- Colors - Orange, Purple, Green and Blue -->
-    <link rel=stylesheet type=text/css href=".{{ url_for('static', filename='style/green.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/green.css') }}">
 
-    <link rel=stylesheet type=text/css href=".{{ url_for('static', filename='style/bootstrap-responsive.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bootstrap-responsive.css') }}">
 
     <!-- HTML5 Support for IE -->
     <!--[if lt IE 9]>
-    <script src=".{{ url_for('static', filename='js/html5shim.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/html5shim.js') }}"></script>
     <![endif]-->
 
     <!-- Favicon -->
-    <link rel=stylesheet type=text/css href=".{{ url_for('static', filename='img/favicon/favicon.png') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='img/favicon/favicon.png') }}">
 
     </head>
 
@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="span12">
                     <div class="logo">
-                        <h1><a href=".{{ url_for("index") }}">Randle <span class="color">Taylor</span></a></h1>
+                        <h1><a href="{{ url_for("index") }}">Randle <span class="color">Taylor</span></a></h1>
                         <div class="hmeta">Programming, Science &amp; Life</div>
                     </div>
                 </div>
@@ -54,112 +54,75 @@
             <div class="container">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span>Menu</span>
-                        </a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="{{url_for('blog')}}">Blog</a></li>
-                            <li><a href="{{url_for('projects')}}">Projects</a></li>
-                        </ul>
+                </a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="{{url_for('index')}}">Home</a></li>
+                        <li><a href="{{url_for('blog')}}">Blog</a></li>
+                        <li><a href="{{url_for('projects')}}">Projects</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-<!-- Navigation bar ends -->
+    <!-- Navigation bar ends -->
 
-<div class="content">
-    <div class="container">
-
-
-        <!-- Hero Unit -->
-
-        <div class="row">
-            <div class="span12">
-                {{ hero_content}}
-                {% if hero_content %}
-                    <hr />
-                {% endif %}
-            </div>
-        </div>
-
-        <!-- Hero Ends -->
-
-        <!-- Discover starts -->
-        {% block discover %}
-
-        <div class="discover">
-            <div class="row">
-                <div class="span12">
-                    {% block discover_content %}
-                    {#
-                    <h4>Topics</h4>
-                    <div class="dis-nav button">
-                        {% for tag in tags %}
-                            <a href="{{ url_for('tag', tag=tag)}}" id="tag_{{tag}}">{{tag}}</a>
-                        {% endfor %}
-                    </div>
-                    #}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
-
-        <!-- Discover ends -->
-        <hr />
-        {% endblock %}
-
-        <!-- Content starts -->
-
-        <div class="services">
-            <div class="row">
+    <div class="content">
+        <div class="container">    
+            {% block hero_content %}
+            {% endblock %}
+        
+            {% block discover %}    
+            <div class="discover">
+                {% block discover_content %}
+                {% endblock %}
+            </div>        
+            <hr />        
+            {% endblock %}
+        
+            <div class="services">
                 {% block content %}
                 {% endblock %}
-                <div class="clearfix"></div>
+            </div>
+            <hr />
         </div>
-        <hr />
-        <!-- Main Content Ends -->
-
-
     </div>
-</div>
+    
+    <!-- Social -->    
+    <div class="social-links">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <p class="big"> <a href="https://bitbucket.org/randlet/"><i class="icon-edit"></i>BitBucket</a> <a href="https://github.com/randlet/"><i class="icon-github"></i>github</a> <a href="https://twitter.com/randletaylor"><i class="icon-twitter"></i>Twitter</a> <a href="https://plus.google.com/114539569374708690174/"><i class="icon-google-plus"></i>Google Plus</a> <a href="http://www.linkedin.com/profile/view?id=41067743"><i class="icon-linkedin"></i>LinkedIn</a> <a href="http://stackoverflow.com/users/79802/randlet"><i class="icon-question-sign"></i>StackOverflow</a> <a href="mailto:randle.taylor@gmail.com"><i class="icon-envelope"></i>email</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- Social -->
 
-<div class="social-links">
-    <div class="container">
-        <div class="row">
+    <!-- Footer -->
+    <footer>
+        <div class="container">
             <div class="span12">
-                <p class="big"> <a href="https://bitbucket.org/randlet/"><i class="icon-edit"></i>BitBucket</a> <a href="https://twitter.com/randletaylor"><i class="icon-twitter"></i>Twitter</a> <a href="https://plus.google.com/114539569374708690174/"><i class="icon-google-plus"></i>Google Plus</a> <a href="http://www.linkedin.com/profile/view?id=41067743"><i class="icon-linkedin"></i>LinkedIn</a> <a href="http://stackoverflow.com/users/79802/randlet"><i class="icon-question-sign"></i>StackOverflow</a> <a href="mailto:randle.taylor@gmail.com"><i class="icon-envelope"></i>email</a></p>
+                <div class="copy">
+                    <p>Copyright &copy; 2012 <a href="#">randlet.com</a> | <a href="mailto:randle.taylor@gmail.com">email</a> | Powered by Python 2.7.3 &amp; Flask
+                </div>
             </div>
+            <div class="clearfix"></div>
         </div>
-    </div>
-</div>
-
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-
-        <div class="span12">
-            <div class="copy">
-                <p>Copyright &copy; 2012 <a href="#">randlet.com</a> | <a href="mailto:randle.taylor@gmail.com">email</a> | Powered by Python 2.7.3 &amp; Flask
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</footer>
-
-<!-- JS -->
-<script src=".{{ url_for('static', filename='js/jquery.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/bootstrap.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/jquery.isotope.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/jquery.prettyPhoto.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/jquery.cslider.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/modernizr.custom.28468.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/filter.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/cycle.js') }}"></script>
-<script src=".{{ url_for('static', filename='js/custom.js') }}"></script>
+    </footer>
+    
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.isotope.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.prettyPhoto.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.cslider.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/modernizr.custom.28468.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+    {#<script src="{{ url_for('static', filename='js/cycle.js') }}"></script>#}
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
 </body>
 </html>
