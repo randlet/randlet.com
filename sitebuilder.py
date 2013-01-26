@@ -25,7 +25,7 @@ valid_projects["qatrack"] = {
     "links":[
         {
             "icon":"icon-play",
-            "href":"/qatrackplus/",
+            "href":"/qatrack/",
             "text":"Live Demo",
             "title":"Try a live demo of QATrack+",
         },        
