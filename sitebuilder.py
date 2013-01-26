@@ -89,6 +89,7 @@ def index():
     context = {
         "page_title":"Programming, Science &amp; Life",
         "pages":pages,
+        "last_post":None if not pages else [x for x in sorted(pages,key=lambda p: p.meta["date"])][-1]
     }
     return render_template('index.html',**context)
 
