@@ -41,7 +41,7 @@
                 <div class="span12">
                     <div class="logo">
                         <h1><a href="{{ url_for("index") }}">Randle <span class="color">Taylor</span></a></h1>
-                        <div class="hmeta">Programming, Science &amp; Life</div>
+                        <div class="hmeta"></div>
                     </div>
                 </div>
             </div>
@@ -60,6 +60,7 @@
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('blog')}}">Blog</a></li>
                         <li><a href="{{url_for('projects')}}">Projects</a></li>
+                        <li><a href="{{url_for('papers_talks')}}">Papers &amp; Talks</a></li>                        
                     </ul>
                 </div>
             </div>
@@ -106,7 +107,7 @@
         <div class="container">
             <div class="span12">
                 <div class="copy">
-                    <p>Copyright &copy; 2012 <a href="#">randlet.com</a> | <a href="mailto:randle.taylor@gmail.com">email</a> | Powered by Python 2.7.3 &amp; Flask
+                    <p>Copyright &copy; 2012 <a href="#">randlet.com</a> | <a href="mailto:randle.taylor@gmail.com">email</a> | Powered by <a href="http://python.org" title="Home of the python programming language">Python</a> &amp; <a href="http://flask.pocoo.org/" title="Home of Flask: a Python Microframework">Flask</a>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -123,6 +124,7 @@
     <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
     {#<script src="{{ url_for('static', filename='js/cycle.js') }}"></script>#}
     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
-
+    {% include "_analytics.html" %}
+    {% include "_disqus_comment_count.html" %}
 </body>
 </html>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block page_title %}QATrack+{% endblock %}
+{% block hero_content%}
+    <div class="row">
+        <div class="span12">            
+            <h1>randlet.com</h1>
+            <h6 class="grey">Source code for my personal homepage</h6>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="span12">
+
+        <p>        
+            All of the code and blog posts for this website are available on my 
+            <a href="http://bitbucket.org/randlet/randlet.com">bitbucket account</a>.            
+        </p>
+        <p>
+            The blog is created using:
+            <ul class="styled offset1">
+                <li><a href="http://flask.pocoo.org/" title="Home of Flask: a Python Microframework">Flask</a></li>
+                <li><a href="http://packages.python.org/Flask-FlatPages/" title="Flask app for flat pages">Flask Flatpages</a>
+                <li><a href="http://packages.python.org/Frozen-Flask/" title="Flask app for static pages">Frozen Flask</a>
+            </ul>
+            
+            Most of the credit should go to <a
+            href="http://nicolas.perriault.net">Nicolas Perriault</a> for his
+            excellent tutorial on <a href="https://nicolas.perriault.net/code/2012/dead-easy-yet-powerful-static-website-generator-with-flask/" title="Frozen Flask Tutorial">Flask/Frozen Flask</a>.  Thanks Nicolas!
+        
+        </p>
+
+    </div> 
+</div>
+
+{% endblock %}

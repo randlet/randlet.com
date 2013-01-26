@@ -6,12 +6,11 @@
             <h1>Orbis</h1>
         </div>
     </div>
-
-
 {% endblock %}
 {% block content %}
 <div class="row">
     <div class="span8">            
+        {% block orbis_main_content %}
         <p> 
             Orbis is a piece of Python software I wrote for performing <a href="http://en.wikipedia.org/wiki/Huckel_method">Simple Huckel
             Molecular Orbital</a> analysis calculations. Orbis is designed to be an
@@ -46,6 +45,7 @@
             </ul>
     
         </p>
+        {% endblock %}
     </div>
     <div class="span4">
         <div class="home-product">

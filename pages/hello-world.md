@@ -1,0 +1,8 @@
+title: Hello World
+date: 2013-01-26
+tags: [general]
+blurb: First post!
+
+New blog built with Flask, Frozen Flask and Flask Flatpages...kudos to
+Nicolas Perriault for his <a href="https://nicolas.perriault.net/code/2012/dead-easy-yet-powerful-static-website-generator-with-flask/">great
+post</a> on creating a blog with this stack.

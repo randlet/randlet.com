@@ -1,0 +1,27 @@
+{% extends "projects/orbis/index.html" %}
+{% block page_title %}Orbis{% endblock %}
+{% block hero_content%}
+    <div class="row">
+        <div class="span12">            
+            <h1>Orbis Screenshots</h1>
+        </div>
+    </div>
+{% endblock %}
+{% block orbis_main_content %}        
+        <i>Click on images to view at full size</i>
+        
+        <p>
+        Orbis showing a simple pyrrole molecule:<br/>
+        <a href="{{url_for('static',filename='img/projects/orbis/pyrrole.png')}}"><img src="{{url_for('static',filename='img/projects/orbis/pyrrole.png')}}" width="400px" alt="Orbis showing a pyrrole molecule"></a>
+        </p>
+
+        <p>
+        Energy level diagram and molecular orbitals for benzene:<br/>
+        <a href="{{url_for('static',filename='img/projects/orbis/benzene_eld.png')}}"><img src="{{url_for('static',filename='img/projects/orbis/benzene_eld.png')}}" width="400px" alt="Orbis showing benzene energy level diagram and molecular orbitals"></a>
+        </p>
+        
+        <p>
+        Aspirin:<br/>
+        <a href="{{url_for('static',filename='img/projects/orbis/aspirin.png')}}"><img src="{{url_for('static',filename='img/projects/orbis/aspirin.png')}}" width="400px" alt="Orbis showing an aspirin molecule"></a>
+        </p>
+{% endblock %}

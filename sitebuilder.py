@@ -16,26 +16,6 @@ freezer = Freezer(app)
 
 
 valid_projects = collections.OrderedDict()
-valid_projects["orbis"] =  {
-    "symbol":"Or",
-    "title": "Orbis",
-    "subtitle":"Simple Huckel Molecular Orbital Calculations",
-    "description": "Orbis is a free and open source program for performing simple Huckel molecular orbital calculations.",        
-    "links":[
-        {
-            "icon":"icon-download",
-            "href":"/static/downloads/install_orbis.exe",
-            "text":"Installer",
-            "title":"Download a Windows installer",
-        },        
-        {
-            "icon":"icon-github",
-            "href":"http://github.com/randlet/orbis/",
-            "text":"Source",
-            "title":"Download the source code",
-        },
-    ],
-}
 valid_projects["qatrack"] = {
     "symbol":"Qa",
     "title": "QATrack+",
@@ -56,12 +36,33 @@ valid_projects["qatrack"] = {
         },
     ],    
 }
+
+valid_projects["orbis"] =  {
+    "symbol":"Or",
+    "title": "Orbis",
+    "subtitle":"Simple Huckel Molecular Orbital Calculations",
+    "description": "Orbis is a free and open source program for performing simple Huckel molecular orbital calculations.",        
+    "links":[
+        {
+            "icon":"icon-download",
+            "href":"/static/downloads/install_orbis.exe",
+            "text":"Installer",
+            "title":"Download a Windows installer",
+        },        
+        {
+            "icon":"icon-github",
+            "href":"http://github.com/randlet/orbis/",
+            "text":"Source",
+            "title":"Download the source code",
+        },
+    ],
+}
     
 valid_projects["randlet.com"] = {
     "symbol":"Ra",
     "title": "randlet.com",
     "subtitle":"Personal Homepage written with Flask/Frozen Flask",
-    "description": "Source code for the webpage you're currently visiting.",        
+    "description": "Source code for the webpage you're currently visiting :)",        
     "links":[
         {
             "icon":"icon-edit",
@@ -105,13 +106,21 @@ def project(project):
     if project not in valid_projects:
         abort(404)
     return render_template("projects/%s/index.html"%project,project=valid_projects[project])
+
+@app.route('/papers-talks/')
+def papers_talks():    
+    return render_template("papers_talks.html")
+
+@app.route('/projects/<path:project>/<path:subpage>/')
+def project_subpage(project,subpage):    
+    return render_template("projects/%s/%s.html"%(project,subpage),project=valid_projects[project])
         
 @app.route('/blog/')
 def blog():
-    return render_template('index.html', pages=pages)
+    return render_template('blog.html', pages=pages)
 
 @app.route('/blog/<path:path>/')
-def page(path):
+def posts(path):
     page = pages.get_or_404(path)
     return render_template('page.html', page=page)
 

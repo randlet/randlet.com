@@ -2,12 +2,20 @@
 {% block page_title %}Home{% endblock %}
 {% block discover %}{% endblock %}
 {% block content %}
-    <div class="span12">
-        <h3>Most Recent Blog Post</h3>
-    </div>
+    <div class="row">
+        <div class="span8">
+            <h4>Most Recent Blog Post</h4>
+            <hr/>
+            {{pages|first}}                    
+        </div>
+        <div class="span4">
+            <h4>About</h4>
+            <hr/>
+            <img src="{{url_for('static',filename='img/profile2.jpg')}}" alt="Me in Freiburg Germany"/>
+            <hr/>
+            {% include "_about_blurb.html" %}
 
-    <div class="span12">
-        {{pages|first}}
+        </div>
+        
     </div>
-
 {% endblock content %}
