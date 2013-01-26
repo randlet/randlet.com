@@ -1,4 +1,5 @@
 import collections
+import os
 import sys
 
 from flask import Flask, render_template, abort, url_for
@@ -105,11 +106,7 @@ def project(project):
     
     if project not in valid_projects:
         abort(404)
-    return render_template("projects/%s/index.html"%project,project=valid_projects[project])
-
-@app.route('/papers-talks/')
-def papers_talks():    
-    return render_template("papers_talks.html")
+    return render_template("projects/%s/index.html"%project,project=valid_projects[project],project_id=project)
 
 @app.route('/projects/<path:project>/<path:subpage>/')
 def project_subpage(project,subpage):    
@@ -124,10 +121,15 @@ def posts(path):
     page = pages.get_or_404(path)
     return render_template('page.html', page=page)
 
+@app.route('/papers-talks/')
+def papers_talks():    
+    return render_template("papers_talks.html")
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html")
 
+    
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
