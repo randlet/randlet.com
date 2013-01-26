@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /qatrack/
+Disallow: /api/
+Disallow: /qa/

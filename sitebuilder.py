@@ -126,6 +126,11 @@ def posts(path):
 def papers_talks():    
     return render_template("papers_talks.html")
 
+
+@app.route("/robots.txt")
+def robots():
+    return render_template("robots.txt")
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html")
