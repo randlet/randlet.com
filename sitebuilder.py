@@ -2,7 +2,7 @@ import collections
 import os
 import sys
 
-from flask import Flask, render_template, abort, url_for
+from flask import Flask, Response,render_template, abort, url_for
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 
@@ -129,7 +129,7 @@ def papers_talks():
 
 @app.route("/robots.txt")
 def robots():
-    return render_template("robots.txt")
+    return Response(render_template("robots.txt"),mimetype="text/plain")
 
 @app.errorhandler(404)
 def page_not_found(e):
