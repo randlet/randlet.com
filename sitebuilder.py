@@ -31,7 +31,7 @@ valid_projects["qatrack"] = {
         },        
         {
             "icon":"icon-edit",
-            "href":"http://bitbucket.com/tohccmedphys/qatrackplus/",
+            "href":"http://bitbucket.org/tohccmedphys/qatrackplus/",
             "text":"Source",
             "title":"Download the source code",
         },
