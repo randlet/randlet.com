@@ -124,7 +124,7 @@ papers["Conference Presentations"] = [
     },        
     
     {
-        "file":"rataylor_mcgill_bd.pdf",
+        "file":"rtaylor_mcgill_bd.pdf",
         "title":"An EGSnrc generated TG-43 dosimetry parameter database",
         "authors":"R E P Taylor and D W O Rogers",
         "date":"2007",
