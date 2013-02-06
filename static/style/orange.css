@@ -1,10 +1,6 @@
 /* Orange */
 
-body{
-	border-top: 3px solid #fe781e;
-}
-
-a, a:visited{
+a{
 	color: #fe781e;
 }
 
@@ -18,6 +14,10 @@ blockquote{
 
 .color{
 	color: #fe781e;	
+}
+
+header{
+	border-top: 2px solid #fe781e;
 }
 
 .navbar .btn{
@@ -53,6 +53,23 @@ background:#e66d1c !important;
 	background: #fe781e;
 }
 
+.full-slider{
+	border-top: 5px solid #e66d1c;
+	background: #fe781e;
+}
+
+.full-slider .button a{
+	background: #e66d1c;
+}
+
+.full-slider .button a:hover{
+	background: #e66d1c;
+}	
+
+.flex-back{
+	background: #e66d1c;	
+}
+
 .home-product{
 	background: #fe781e;
 }
@@ -68,6 +85,12 @@ background:#e66d1c !important;
 #portfolio .pcap{
 	background:#fe781e;
 	border-top: 2px solid #e66d1c;
+}
+
+/* Events - Accordion*/
+
+.events .accordion-heading h5{
+background:#fe781e;
 }
 
 .social-links{
@@ -86,7 +109,6 @@ background:#e66d1c !important;
 	color: #fe781e;	
 }
 
-
 .features-two .feat i, .features-three i{
 	color: #fe781e;
 }
@@ -99,7 +121,7 @@ background:#e66d1c !important;
 	background: #fe781e;
 }
 
-.button a, .button a:visited{
+.button a{
 	background: #fe781e;
 }
 
@@ -113,8 +135,4 @@ background:#e66d1c !important;
 
 .paging .current{
 	background: #e66d1c;
-}
-
-.comments .comment{
-	border-bottom:2px solid #e66d1c;
 }

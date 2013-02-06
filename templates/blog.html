@@ -39,6 +39,9 @@
                            <p>{{page.blurb|safe}}</p>
                            <div class="button"><a href="{{url_for('posts',path=page.path)}}">Read More...</a></div>
                            <div class="clearfix"></div>
+                            {% if page.attribution %}<em><a href="{{page.attribution}}">Original Img</a></em>{% endif %}
+                            
+
                         </div>
                     {% endfor %}
                   

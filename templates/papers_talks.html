@@ -9,5 +9,34 @@
 {% endblock %}
 
 {% block content %}
-    <em>Stay tuned...</em>
+
+{% for category,items in papers.iteritems() %}
+
+    <div class="row tasks">
+        <div class="span12">
+    
+            <h3>{{category}}</h3>
+            {% for item in items %}
+    
+                <div class="task cool">
+                    <h6>{{item.title|safe}}</h6>
+                    <div class="tmeta">
+                        <i class="icon-group"></i> {{item.authors|safe }} <i class="icon-calendar"></i> {{item.date}} <i class="icon-globe"></i> {{ item.location|safe }}
+                        
+                    </div>
+                    <p>
+                        {% if item.file %}
+                            <a href="{{url_for('static',filename="downloads/papers/"+item.file)}}"><i class="icon-download-alt"></i> Download</a>
+                        {% endif %}
+                        {% if item.url %}
+                            <a href="{{item.url}}"><i class="icon-link"></i> Link</a>
+                        {% endif %}                        
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+    
+
 {% endblock %}

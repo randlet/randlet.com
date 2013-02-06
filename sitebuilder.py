@@ -75,6 +75,73 @@ valid_projects["randlet.com"] = {
 }
 
 
+papers = collections.OrderedDict()
+papers["Papers"] = [
+    {
+        "file":"Ta06b.pdf",
+        "title":"Benchmarking BrachyDose: voxel-based EGSnrc Monte Carlo calculations of TG&mdash;43 dosimetry parameters",
+        "authors":"R. E. P. Taylor, G. Yegin, D. W. O. Rogers",
+        "date":"2007",
+        "location": "Med. Phys., 34, 445 &mdash; 457",
+    },
+    {
+        "file":"TR08.pdf",
+        "title":"More accurate fitting of <sup>125</sup>I and <sup>103</sup>Pd radial dose functions",
+        "authors":"R. E. P. Taylor, D. W. O. Rogers",
+        "date":"2008",
+        "location": "Med. Phys., 35, 4242 &mdash; 4250",
+    },
+    {
+        "file":"TR08b.pdf",
+        "title":"An EGSnrc Monte Carlo-calculated database of TG-43 parameters",
+        "authors":"R. E. P. Taylor, D. W. O. Rogers",
+        "date":"2008",
+        "location": "Med. Phys., 35, 4228 &mdash; 4241",
+    },
+    {
+        "file":"TR08c.pdf",
+        "title":"EGSnrc Monte Carlo calculated dosimetry parameters for 192Ir and 169Yb brachytherapy sources",
+        "authors":"R. E. P. Taylor, D. W. O. Rogers",
+        "date":"2008",        
+        "location": "Med. Phys., 35, 4933 &mdash; 4944",
+    },
+
+    {
+        "url":"http://people.physics.carleton.ca/~drogers/pubs/papers/Th08.pdf",
+        "title":"Monte Carlo dosimetry for I and Pd eye plaque brachytherapy",
+        "authors":"R. M. Thomson, R. E. P. Taylor and D. W. O. Rogers",
+        "date":"2008",
+        "location": "Med. Phys., 35, 5530 &mdash; 5543",
+    },    
+]
+papers["Conference Presentations"] = [
+    {
+        "file":"qatrackplus_comp_ws_2013.pdf",
+        "title":"QATrack+: A free and open source tool for radiotherapy quality assurance",
+        "authors":"R. E. Taylor, C. Angers, D. La Russa, R. Studinski, D. Mason, B. Clark",
+        "date":"2013",
+        "location": "COMP Winter School, Mt. Tremblant, Quebec",
+    },        
+    
+    {
+        "file":"rataylor_mcgill_bd.pdf",
+        "title":"An EGSnrc generated TG-43 dosimetry parameter database",
+        "authors":"R E P Taylor and D W O Rogers",
+        "date":"2007",
+        "location": "Monte Carlo Workshop, McGill University",
+    },        
+    
+    {
+        "file":"aapm_final_rtaylor.pdf",
+        "url":"http://online.medphys.org/resource/1/mphya6/v33/i6/p2205_s4",
+        "title":"Monte Carlo Modeling of the Xoft AXXENT X-Ray Source",
+        "authors":"R E P Taylor, G Yegin, and D W O Rogers",
+        "date":"2006",
+        "location": "AAPM 48<sup>th</sup> Annual Meeting, Orland, Florida",
+    },        
+    
+    
+]
 
 @app.context_processor
 def inject_tags():
@@ -124,7 +191,7 @@ def posts(path):
 
 @app.route('/papers-talks/')
 def papers_talks():    
-    return render_template("papers_talks.html")
+    return render_template("papers_talks.html",papers=papers)
 
 
 @app.route("/robots.txt")

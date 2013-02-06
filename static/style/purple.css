@@ -1,10 +1,6 @@
 /* Purple */
 
-body{
-	border-top: 3px solid #9b59bb;
-}
-
-a, a:visited{
+a{
 	color: #9b59bb;
 }
 
@@ -18,6 +14,10 @@ blockquote{
 
 .color{
 	color: #9b59bb;	
+}
+
+header{
+	border-top: 2px solid #9b59bb;
 }
 
 .navbar .btn{
@@ -53,6 +53,23 @@ background:#81499c !important;
 	background: #9b59bb;
 }
 
+.full-slider{
+	border-top: 5px solid #81499c;
+	background: #9b59bb;
+}
+
+.full-slider .button a{
+	background: #81499c;
+}
+
+.full-slider .button a:hover{
+	background: #81499c;
+}	
+
+.flex-back{
+	background: #81499c;	
+}
+
 .home-product{
 	background: #9b59bb;
 }
@@ -68,6 +85,12 @@ background:#81499c !important;
 #portfolio .pcap{
 	background:#9b59bb;
 	border-top: 2px solid #81499c;
+}
+
+/* Events - Accordion*/
+
+.events .accordion-heading h5{
+background:#9b59bb;
 }
 
 .social-links{
@@ -86,7 +109,6 @@ background:#81499c !important;
 	color: #9b59bb;	
 }
 
-
 .features-two .feat i, .features-three i{
 	color: #9b59bb;
 }
@@ -99,7 +121,7 @@ background:#81499c !important;
 	background: #9b59bb;
 }
 
-.button a, .button a:visited{
+.button a{
 	background: #9b59bb;
 }
 
@@ -113,8 +135,4 @@ background:#81499c !important;
 
 .paging .current{
 	background: #81499c;
-}
-
-.comments .comment{
-	border-bottom:2px solid #81499c;
 }
