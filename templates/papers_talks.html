@@ -21,9 +21,13 @@
                 <div class="task cool">
                     <h6>{{item.title|safe}}</h6>
                     <div class="tmeta">
-                        <i class="icon-group"></i> {{item.authors|safe }} <i class="icon-calendar"></i> {{item.date}} <i class="icon-globe"></i> {{ item.location|safe }}
-                        
+                        <i class="icon-group"></i> {{item.authors|safe }} <i class="icon-calendar"></i> {{item.date}} <i class="icon-globe"></i> {{ item.location|safe }}                        
                     </div>
+                    {% if item.note %}
+                        <div class="tmeta">
+                            <p>Note: {{item.note}}</p>
+                        </div>
+                    {% endif %}
                     <p>
                         {% if item.file %}
                             <a href="{{url_for('static',filename="downloads/papers/"+item.file)}}"><i class="icon-download-alt"></i> Download</a>

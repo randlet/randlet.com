@@ -138,11 +138,19 @@ papers["Conference Presentations"] = [
         "authors":"R E P Taylor, G Yegin, and D W O Rogers",
         "date":"2006",
         "location": "AAPM 48<sup>th</sup> Annual Meeting, Orland, Florida",
-    },        
-    
-    
+    },            
 ]
 
+papers["M.Sc. Thesis"] = [
+    {
+        "file":"thesis_no_xoft.pdf",
+        "title":"Monte Carlo Calculations for Brachytherapy",
+        "authors":"R. E. Taylor",
+        "date":"2006",
+        "location": "Thesis for my M.Sc.in Medical Physics supervised by D. W. O. Rogers at Carleton University",
+        "note":"Chapter 4 and a couple of other pages having to do with the Xoft source have been removed due to an NDA.",
+    },        
+]
 @app.context_processor
 def inject_tags():
     tags = []
