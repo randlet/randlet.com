@@ -2,7 +2,7 @@ import collections
 import os
 import sys
 
-from flask import Flask, Response,render_template, abort, url_for
+from flask import Flask, Response,render_template, abort, url_for,request
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 
@@ -206,6 +206,20 @@ def papers_talks():
 def robots():
     return Response(render_template("robots.txt"),mimetype="text/plain")
 
+@app.route('/sitemap.xml')
+def sitemap():
+    url_root = request.url_root[:-1]
+    def urlf(url):
+        remove = ["img","js","style","font"]
+        return not any(url.startswith("/static/%s" % x) for x in remove)
+
+    page_urls = ["/blog/%s"%p.path for p in pages]
+    other_urls = [u for u in freezer.all_urls() if urlf(u)]
+
+    rules = page_urls + other_urls
+
+    return render_template('sitemap.xml', url_root=url_root, rules=rules)
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html")
@@ -215,4 +229,4 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
-        app.run(port=8000)
+        app.run(port=8000,use_reloader=False)
