@@ -216,7 +216,7 @@ page_urls = ["/blog/%s"%p.path for p in pages]
 
 @app.route('/sitemap.xml')
 def sitemap():
-    url_root = request.host_url[:-1]
+    url_root = r"http://randlet.com"
     rules = page_urls + other_urls
     return Response(render_template('sitemap.xml', url_root=url_root, rules=rules),mimetype="text/xml" )
 
