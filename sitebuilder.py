@@ -218,7 +218,7 @@ page_urls = ["/blog/%s"%p.path for p in pages]
 def sitemap():
     url_root = request.url_root[:-1]    
     rules = page_urls + other_urls
-    return Response(render_template('sitemap.xml', url_root=url_root, rules=rules),mimetype="text/xml")
+    return Response(render_template('sitemap.xml', url_root=url_root, rules=rules),mimetype="text/xml" )
 
 @app.errorhandler(404)
 def page_not_found(e):
