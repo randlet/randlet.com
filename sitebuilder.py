@@ -206,19 +206,19 @@ def papers_talks():
 def robots():
     return Response(render_template("robots.txt"),mimetype="text/plain")
 
+
+def urlf(url):
+    remove = ["img","js","style","font"]
+    return not any(url.startswith("/static/%s" % x) for x in remove)
+
+other_urls = list([u for u in freezer.all_urls() if urlf(u)])
+page_urls = ["/blog/%s"%p.path for p in pages]
+
 @app.route('/sitemap.xml')
 def sitemap():
-    url_root = request.url_root[:-1]
-    def urlf(url):
-        remove = ["img","js","style","font"]
-        return not any(url.startswith("/static/%s" % x) for x in remove)
-
-    page_urls = ["/blog/%s"%p.path for p in pages]
-    other_urls = [u for u in freezer.all_urls() if urlf(u)]
-
+    url_root = request.url_root[:-1]    
     rules = page_urls + other_urls
-
-    return render_template('sitemap.xml', url_root=url_root, rules=rules)
+    return Response(render_template('sitemap.xml', url_root=url_root, rules=rules),mimetype="text/xml")
 
 @app.errorhandler(404)
 def page_not_found(e):
