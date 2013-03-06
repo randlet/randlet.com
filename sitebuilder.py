@@ -13,6 +13,8 @@ FLATPAGES_EXTENSION = '.md'
 app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
+sorted_pages = sorted(pages,key=lambda p: p.meta["date"],reverse=True)
+
 freezer = Freezer(app)
 
 
@@ -163,8 +165,8 @@ def inject_tags():
 def index():
     context = {
         "page_title":"Programming, Science &amp; Life",
-        "pages":pages,
-        "last_post":None if not pages else [x for x in sorted(pages,key=lambda p: p.meta["date"])][-1]
+        "pages":sorted_pages,
+        "last_post":None if not pages else list(sorted_pages)[0]
     }
     return render_template('index.html',**context)
 
@@ -190,7 +192,7 @@ def project_subpage(project,subpage):
         
 @app.route('/blog/')
 def blog():
-    return render_template('blog.html', pages=pages)
+    return render_template('blog.html', pages=sorted_pages)
 
 @app.route('/blog/<path:path>/')
 def posts(path):

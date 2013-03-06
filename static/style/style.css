@@ -2103,3 +2103,14 @@ footer .copy{
 @media (max-width: 979px){
 
 }
+
+
+#main-sidebar hr{
+	margin:10px 0;
+}
+#main-sidebar p {
+	margin:15px 5px;
+}
+#main-sidebar h5{
+	margin-bottom:0;
+}

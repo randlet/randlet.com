@@ -1,7 +1,14 @@
 {% extends "base.html" %}
+{% block page_title %}{{page.title}}{% endblock %}
+{% block discover %}{% endblock %}
 
 {% block content %}
-    <h2>{{ page.title }}</h2>
+    <h3>{{ page.title }}</h3>
+
+    <div class="meta">
+       <i class="icon-calendar"></i> {{page.date}} {% for page_tag in page.tags %}<i class="icon-tag"></i> <a href="{{url_for('tag',tag=page_tag)}}">{{page_tag}}</a>{% endfor %}
+    </div>
+    
     {{ page.html|safe }}
     {% include "_disqus.html" %}
 {% endblock content %}

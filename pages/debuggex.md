@@ -1,7 +1,10 @@
 title: Debuggex - A visual regex debugging tool
 date: 2013-03-01
 tags: [regex, tools, python, javascript]
+thumbnail: debuggex.jpg
+attribution: http://www.flickr.com/photos/franzlife/830424476/
 blurb: Debuggex is an excellent online tool for debugging regexes.
+
 
 Yesterday for a project at work I needed to develop some regexes to parse a
 bunch of strings like:
