@@ -11,16 +11,19 @@
 
 
     <!-- Stylesheets -->
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bootstrap.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bootstrap.min.css') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/font-awesome.css') }}">
+    {% comment %}
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/prettyPhoto.css') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/slider.css') }}">
+    {% endcomment %}
+    
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/style.css') }}">
 
     <!-- Colors - Orange, Purple, Green and Blue -->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/green.css') }}">
 
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bootstrap-responsive.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bootstrap-responsive.min.css') }}">
 
     <!-- HTML5 Support for IE -->
     <!--[if lt IE 9]>
@@ -115,7 +118,10 @@
     </footer>
     
     <!-- JS -->
-    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>    
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js' }}"></script>
+    
+    {% comment %}
     <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.isotope.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.prettyPhoto.js') }}"></script>
@@ -124,6 +130,7 @@
     <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
     {#<script src="{{ url_for('static', filename='js/cycle.js') }}"></script>#}
     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    {% endcomment %}
     {% include "_analytics.html" %}
     {% include "_disqus_comment_count.html" %}
 </body>
