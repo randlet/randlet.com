@@ -3,7 +3,7 @@ import os
 import sys
 
 from flask import Flask, Response,render_template, abort, url_for,request
-from flask_flatpages import FlatPages
+from flask_flatpages import FlatPages,pygmented_markdown,pygments_style_defs
 from flask_frozen import Freezer
 
 DEBUG = True
@@ -199,6 +199,7 @@ def posts(path):
     page = pages.get_or_404(path)
     return render_template('page.html', page=page)
 
+
 @app.route('/papers-talks/')
 def papers_talks():    
     return render_template("papers_talks.html",papers=papers)
@@ -208,6 +209,9 @@ def papers_talks():
 def robots():
     return Response(render_template("robots.txt"),mimetype="text/plain")
 
+@app.route('/pygments.css')
+def pygments_css():
+    return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
 
 def urlf(url):
     remove = ["img","js","style","font"]
@@ -231,4 +235,6 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
-        app.run(port=8000,use_reloader=False)
+        use_reloader = len(sys.argv) > 1 and sys.argv[1] == "reload"
+    
+        app.run(port=8000,use_reloader=use_reloader)
