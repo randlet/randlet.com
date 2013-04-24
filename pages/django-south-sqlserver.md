@@ -1,7 +1,7 @@
 title: A Couple of Django South & SQL Server Migration Tips
 date: 2013-04-23
 tags: [python, django, south, sql server, migration]
-blurb: First post!
+blurb: Problems and solutions to a couple of issues I ran into using Django South & SQL Server 
 thumbnail: south.jpg 
 attribution: http://www.flickr.com/photos/theothermattm/251502416
 
