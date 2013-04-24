@@ -1,4 +1,4 @@
-title: A Couple of Django South &amp; SQL Server Migration Tips
+title: A Couple of Django South & SQL Server Migration Tips
 date: 2013-04-23
 tags: [python, django, south, sql server, migration]
 blurb: First post!
