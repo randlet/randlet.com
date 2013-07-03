@@ -116,7 +116,14 @@ papers["Papers"] = [
         "location": "Med. Phys., 35, 5530 &mdash; 5543",
     },    
 ]
-papers["Conference Presentations"] = [
+papers["Talks & Conference Presentations"] = [
+    {
+        "file":"odette-17-may-2013.zip",
+        "title":"QATrack+: A free and open source tool for radiotherapy quality assurance",
+        "authors":"R. E. Taylor",
+        "date":"2013",
+        "location": "Odette Cancer Centre, Sunnybrook Hospital, Toronto, Ontario",
+    },
     {
         "file":"qatrackplus_comp_ws_2013.pdf",
         "title":"QATrack+: A free and open source tool for radiotherapy quality assurance",
