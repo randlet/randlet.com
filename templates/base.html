@@ -29,7 +29,10 @@
     <!-- Favicon -->
     <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='img/favicon/favicon.png') }}">
     <meta name="google-site-verification" content="2jQ6oAL2_zcdlvKcpjoMP2YyQ9x-GRJ9yIJ1cOBFPpI" />
-    </head>
+
+    {% block extra_script %}{% endblock %}
+
+</head>
 
 <body>
 
@@ -40,7 +43,6 @@
                 <div class="span12">
                     <div class="logo">
                         <h1><a href="{{ url_for("index") }}">Randle <span class="color">Taylor</span></a></h1>
-                        <div class="hmeta">Programming, Physics &amp; Bikes</div>
                     </div>
                 </div>
             </div>
