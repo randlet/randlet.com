@@ -203,7 +203,7 @@ def project_subpage(project,subpage):
 def blog():
     return render_template('blog.html', pages=sorted_pages)
 
-@app.route('/blog/rss/')
+@app.route('/blog/rss.xml')
 def posts_feed():
 
     rss = PyRSS2Gen.RSS2(
