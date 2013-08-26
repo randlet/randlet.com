@@ -1,9 +1,11 @@
 import collections
+import datetime
 import os
 import sys
-
-from flask import Flask, Response,render_template, abort, url_for,request
-from flask_flatpages import FlatPages,pygmented_markdown,pygments_style_defs
+import StringIO
+import PyRSS2Gen
+from flask import Flask, Response, render_template, abort, url_for, request
+from flask_flatpages import FlatPages, pygmented_markdown, pygments_style_defs
 from flask_frozen import Freezer
 
 DEBUG = True
@@ -200,6 +202,29 @@ def project_subpage(project,subpage):
 @app.route('/blog/')
 def blog():
     return render_template('blog.html', pages=sorted_pages)
+
+@app.route('/blog/rss/')
+def posts_feed():
+
+    rss = PyRSS2Gen.RSS2(
+        title = "Randle Taylor's Blog Feed",
+        link = "http://randlet.com/blog/rss/",
+        description = "Posts on programming and general technology with a focus on Python & web applications",
+
+        lastBuildDate = datetime.datetime.now(),
+        items = [
+            PyRSS2Gen.RSSItem(
+                title = page.meta.get("title","Untitled"),
+                link = page.path,
+                description = page.meta.get("blurb",""),
+                guid = PyRSS2Gen.Guid(page.path),
+                pubDate = "%s" % page.meta.get("date"),
+            ) for page in sorted_pages
+        ]
+    )
+
+    return Response(rss.to_xml(), mimetype="text/xml" )
+        #rss.write_xml(open("pyrss2gen.xml", "w"))
 
 @app.route('/blog/<path:path>/')
 def posts(path):
