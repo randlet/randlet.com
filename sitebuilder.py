@@ -218,7 +218,7 @@ def posts_feed():
                 link = page.path,
                 description = page.meta.get("blurb",""),
                 guid = PyRSS2Gen.Guid(page.path),
-                pubDate = "%s" % page.meta.get("date"),
+                pubDate = page.meta.get("date").strftime("%a, %d %b %Y %H:%M:%S %z")
             ) for page in sorted_pages
         ]
     )
