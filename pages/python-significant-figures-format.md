@@ -1,4 +1,4 @@
-title: Formatting floats to a specific number of significant figures in Python
+title: Formatting floats to a specific number of significant digits in Python
 date: 2013-08-25
 tags: [python, javascript]
 blurb: A Python function for formatting floats to a specific number of significant digits. This is a port of Javascripts Number.toPrecision method.
