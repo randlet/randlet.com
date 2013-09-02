@@ -1,8 +1,9 @@
 import collections
 import datetime
+import itertools
 import sys
 import PyRSS2Gen
-from flask import Flask, Response, render_template, abort
+from flask import Flask, Response, render_template, abort, url_for
 from flask_flatpages import FlatPages, pygments_style_defs
 from flask_frozen import Freezer
 
@@ -240,6 +241,12 @@ def posts_feed(tag=None):
 
     return Response(rss.to_xml(), mimetype="text/xml")
 
+@freezer.register_generator
+def posts_feed():
+    #url generator for filtered  xml pages
+    all_tags = (itertools.chain(*(p.meta.get("tags", []) for p in pages)))
+    for tag in all_tags:
+        yield {'tag': tag}
 
 @app.route('/blog/<path:path>/')
 def posts(path):
@@ -269,6 +276,7 @@ def urlf(url):
 
 other_urls = list([u for u in freezer.all_urls() if urlf(u)])
 page_urls = ["/blog/%s" % p.path for p in pages]
+
 
 
 @app.route('/sitemap.xml')
