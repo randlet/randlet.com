@@ -231,7 +231,7 @@ def posts_feed(tag=None):
         items=[
             PyRSS2Gen.RSSItem(
                 title=page.meta.get("title", "Untitled"),
-                link=page.path,
+                link="http://randlet.com/blog/%s/" % (page.path),
                 description=page.meta.get("blurb", ""),
                 guid=PyRSS2Gen.Guid(page.path),
                 pubDate=page.meta.get("date").strftime("%a, %d %b %Y %H:%M:%S %z")
