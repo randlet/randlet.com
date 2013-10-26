@@ -119,17 +119,31 @@ papers["Papers"] = [
 ]
 papers["Talks & Conference Presentations"] = [
     {
+        "file": "opag-24-oct-2013.zip",
+        "title": "Python at The Ottawa Hospital Cancer Centre",
+        "authors": "R. E. Taylor",
+        "date": "24 Oct 2013",
+        "location": "Ottawa Python Authors Group Monthly Meeting, Ottawa, Ontario",
+    },
+    {
+        "file": "mcgill-4-oct-2013.zip",
+        "title": "Leveraging Software To Improve Quality In The Clinic",
+        "authors": "R. E. Taylor",
+        "date": "4 Oct 2013",
+        "location": "McGill Medical Physics Department, Montreal General Hospital, Montreal, Quebec",
+    },
+    {
         "file": "odette-17-may-2013.zip",
         "title": "QATrack+: A free and open source tool for radiotherapy quality assurance",
         "authors": "R. E. Taylor",
-        "date": "2013",
+        "date": "17 May 2013",
         "location": "Odette Cancer Centre, Sunnybrook Hospital, Toronto, Ontario",
     },
     {
         "file": "qatrackplus_comp_ws_2013.pdf",
         "title": "QATrack+: A free and open source tool for radiotherapy quality assurance",
         "authors": "R. E. Taylor, C. Angers, D. La Russa, R. Studinski, D. Mason, B. Clark",
-        "date": "2013",
+        "date": "27 Jan 2013",
         "location": "COMP Winter School, Mt. Tremblant, Quebec",
     },
 
