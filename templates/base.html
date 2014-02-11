@@ -14,11 +14,11 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/bootstrap-responsive.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/font-awesome.css') }}">
-    
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style.css') }}">
 
     <!-- Colors - Orange, Purple, Green and Blue -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/green.css') }}">  
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/green.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('pygments_css') }}">
 
     <!-- HTML5 Support for IE -->
@@ -61,7 +61,7 @@
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('blog')}}">Blog</a></li>
                         <li><a href="{{url_for('projects')}}">Projects</a></li>
-                        <li><a href="{{url_for('papers_talks')}}">Papers &amp; Talks</a></li>                        
+                        <li><a href="{{url_for('papers_talks')}}">Papers &amp; Talks</a></li>
                     </ul>
                 </div>
             </div>
@@ -71,18 +71,18 @@
     <!-- Navigation bar ends -->
 
     <div class="content">
-        <div class="container">    
+        <div class="container">
             {% block hero_content %}
             {% endblock %}
-        
-            {% block discover %}    
+
+            {% block discover %}
             <div class="discover">
                 {% block discover_content %}
                 {% endblock %}
-            </div>        
-            <hr />        
+            </div>
+            <hr />
             {% endblock %}
-        
+
             <div class="services">
                 {% block content %}
                 {% endblock %}
@@ -90,8 +90,8 @@
             <hr />
         </div>
     </div>
-    
-    <!-- Social -->    
+
+    <!-- Social -->
     <div class="social-links">
         <div class="container">
             <div class="row">
@@ -114,11 +114,11 @@
             <div class="clearfix"></div>
         </div>
     </footer>
-    
+
     <!-- JS -->
-    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>    
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
-    
+
     {#
     <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.isotope.js') }}"></script>
@@ -131,5 +131,6 @@
 `   #}
     {% include "_analytics.html" %}
     {% include "_disqus_comment_count.html" %}
+    {% include "_the_day_we_fight_back.html" %}
 </body>
 </html>
