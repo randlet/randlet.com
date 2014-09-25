@@ -19,7 +19,9 @@ sorted_pages = sorted(pages, key=lambda p: p.meta["date"], reverse=True)
 freezer = Freezer(app)
 
 
+# TODO: move valid_projects & papers to json file
 valid_projects = collections.OrderedDict()
+
 valid_projects["qatrack"] = {
     "symbol": "Qa",
     "title": "QATrack+",
@@ -63,6 +65,7 @@ valid_projects["orbis"] = {
 }
 
 valid_projects["randlet.com"] = {
+
     "symbol": "Ra",
     "title": "randlet.com",
     "subtitle": "Personal Homepage written with Flask/Frozen Flask",
@@ -78,7 +81,18 @@ valid_projects["randlet.com"] = {
 }
 
 
+valid_projects["power-rack"] = {
+
+    "symbol": "PR",
+    "title": "Power Rack",
+    "subtitle": "A homemade wooden power rack",
+    "description": "A wooden power rack I built so that I could begin barbell training.",
+    "links": [],
+}
+
+
 papers = collections.OrderedDict()
+
 papers["Papers"] = [
     {
         "file": "Ta06b.pdf",
@@ -117,6 +131,7 @@ papers["Papers"] = [
         "location": "Med. Phys., 35, 5530 &mdash; 5543",
     },
 ]
+
 papers["Talks & Conference Presentations"] = [
     {
         "file": "opag-24-oct-2013.zip",
@@ -255,12 +270,14 @@ def posts_feed(tag=None):
 
     return Response(rss.to_xml(), mimetype="text/xml")
 
+
 @freezer.register_generator
 def posts_feed():
     #url generator for filtered  xml pages
     all_tags = (itertools.chain(*(p.meta.get("tags", []) for p in pages)))
     for tag in all_tags:
         yield {'tag': tag}
+
 
 @app.route('/blog/<path:path>/')
 def posts(path):
@@ -271,6 +288,11 @@ def posts(path):
 @app.route('/papers-talks/')
 def papers_talks():
     return render_template("papers_talks.html",papers=papers)
+
+
+@app.route('/hire-me/')
+def hire_me():
+    return render_template("hire_me.html")
 
 
 @app.route("/robots.txt")
@@ -290,7 +312,6 @@ def urlf(url):
 
 other_urls = list([u for u in freezer.all_urls() if urlf(u)])
 page_urls = ["/blog/%s" % p.path for p in pages]
-
 
 
 @app.route('/sitemap.xml')

@@ -6,11 +6,11 @@
 {% block hero_content %}
 {% endblock %}
 
-{% block discover %}            
+{% block discover %}
 <div class="blog">
     <div class="row">
         <div class="span12">
-         
+
         <div class="row">
 
             <div class="span8">
@@ -20,28 +20,28 @@
 
                         <div class="entry">
                            <h2><a href="{{url_for('posts',path=page.path)}}">{{page.title}}</a></h2>
-                           
+
                            <!-- Meta details -->
                            <div class="meta">
                               <i class="icon-calendar"></i> {{page.date}} {% for page_tag in page.tags %}<i class="icon-tag"></i> <a href="{{url_for('tag',tag=page_tag)}}">{{page_tag}}</a>{% endfor %} <span class="pull-right"><i class="icon-comment"></i> <a href="{{url_for('posts',path=page.path)}}#disqus_thread"> Comments</a></span>
                            </div>
-                           
+
                            <!-- Thumbnail -->
                            <div class="bthumb2">
                                 {% if page.thumbnail %}
                                       <a href="{{url_for('posts',path=page.path)}}"><img width="250px;" src="{{url_for('static',filename='img/blog/%s'%page.thumbnail)}}" alt="" /></a>
                                 {% endif %}
                            </div>
-                           
+
                            <p>{{page.blurb|safe}}</p>
                            <div class="button"><a href="{{url_for('posts',path=page.path)}}">Read More...</a></div>
                            <div class="clearfix"></div>
                             {% if page.attribution %}<em><a href="{{page.attribution}}">Original Img</a></em>{% endif %}
-                            
+
 
                         </div>
                     {% endfor %}
-                  
+
                     {#
                     <div class="paging">
                        <span class='current'>1</span>
@@ -49,15 +49,15 @@
                        <span class="dots">&hellip;</span>
                        <a href='#'>6</a>
                        <a href="#">Next</a>
-                    </div> 
+                    </div>
                     #}
-                  
+
                   <div class="clearfix"></div>
-                  
+
                </div>
-            </div>                        
+            </div>
             <div id="main-sidebar" class="span4">
-            
+
                 <div class="row-fluid">
                     <div class="span12">
                         <h5>About</h5>
@@ -74,16 +74,16 @@
                             <a href="{{url_for("posts",path=post.path)}}" title="{{post.title}}">{{post.title}}</a><br/>
                         {% endfor %}
                     </div>
-                </div>            
-    
+                </div>
+
             </div>
-         
-         
-         
+
+
+
       </div>
    </div>
 </div>
- 
+
 
  <div class="border"></div>
 {% endblock %}

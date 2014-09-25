@@ -4,21 +4,21 @@
 {% block content %}
     <div class="row">
         <div class="span8">
-            <div class="row-fluid">        
+            <div class="row-fluid">
                 <div class="span12">
                     <h5><a href="{{url_for("posts",path=last_post.path)}}" title="{{last_post.title}}">{{last_post.title}}</a></h5>
                     <div class="meta">
-                       <i class="icon-calendar"></i> {{last_post.date}} {% for page_tag in last_post.tags %}<i class="icon-tag"></i> <a href="{{url_for('tag',tag=page_tag)}}">{{page_tag}}</a>{% endfor %} 
+                       <i class="icon-calendar"></i> {{last_post.date}} {% for page_tag in last_post.tags %}<i class="icon-tag"></i> <a href="{{url_for('tag',tag=page_tag)}}">{{page_tag}}</a>{% endfor %}
                     </div>
                     <hr/>
-                    {{last_post}}                    
+                    {{last_post}}
                     <hr/>
-                    <span ><i class="icon-comment"></i> <a href="{{url_for('posts',path=last_post.path)}}#disqus_thread"> Comments</a></span>            
+                    <span ><i class="icon-comment"></i> <a href="{{url_for('posts',path=last_post.path)}}#disqus_thread"> Comments</a></span>
                 </div>
             </div>
         </div>
         <div id="main-sidebar" class="span4">
-        
+
             <div class="row-fluid">
                 <div class="span12">
                     <h5>About</h5>
@@ -35,9 +35,9 @@
                         <a href="{{url_for("posts",path=post.path)}}" title="{{post.title}}">{{post.title}}</a><br/>
                     {% endfor %}
                 </div>
-            </div>            
+            </div>
 
         </div>
-        
+
     </div>
 {% endblock content %}

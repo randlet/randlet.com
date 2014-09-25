@@ -52,7 +52,7 @@ h6{
 }
 
 p{
-	margin: 2px 0px;
+	margin: 2px 0px 15px;
 }
 
 a:hover,a:active,a:focus {
@@ -193,7 +193,7 @@ border-top:0px;
 
 .purple{
 	color: #9b59bb !important;
-}	
+}
 
 .blue{
 	color: #1570a6 !important;
@@ -221,7 +221,7 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;	
+	transition:background 1s ease;
 	cursor:default;
 }
 
@@ -230,7 +230,7 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;	
+	transition:background 1s ease;
 }
 
 .b-purple{
@@ -241,8 +241,8 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;	
-	cursor:default;	
+	transition:background 1s ease;
+	cursor:default;
 }
 
 .b-purple:hover{
@@ -250,7 +250,7 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;		
+	transition:background 1s ease;
 }
 
 .b-blue{
@@ -261,8 +261,8 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;	
-	cursor:default;		
+	transition:background 1s ease;
+	cursor:default;
 }
 
 .b-blue:hover{
@@ -270,7 +270,7 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;		
+	transition:background 1s ease;
 }
 
 .b-green{
@@ -281,8 +281,8 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;	
-	cursor:default;	
+	transition:background 1s ease;
+	cursor:default;
 }
 
 .b-green:hover{
@@ -290,7 +290,7 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;		
+	transition:background 1s ease;
 }
 
 .b-black{
@@ -301,8 +301,8 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;	
-	cursor:default;	
+	transition:background 1s ease;
+	cursor:default;
 }
 
 .b-black:hover{
@@ -310,7 +310,7 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;		
+	transition:background 1s ease;
 }
 
 .b-lblue{
@@ -321,8 +321,8 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;	
-	cursor:default;	
+	transition:background 1s ease;
+	cursor:default;
 }
 
 .b-lblue:hover{
@@ -330,7 +330,7 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;		
+	transition:background 1s ease;
 }
 
 .b-red{
@@ -341,8 +341,8 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;	
-	cursor:default;	
+	transition:background 1s ease;
+	cursor:default;
 }
 
 .b-red:hover{
@@ -350,7 +350,7 @@ border-top:0px;
 	-webkit-transition:background 1s ease;
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
-	transition:background 1s ease;		
+	transition:background 1s ease;
 }
 
 /* Columns */
@@ -390,7 +390,7 @@ form input{
 	display: inline;
 	float: right;
 }
-   
+
 .aligncenter, img.aligncenter {
 	margin-right: auto;
 	margin-left: auto;
@@ -445,7 +445,7 @@ header .form{
 	box-shadow: none !important;
 	text-shadow: none !important;
 	border-radius: 0px !important;
-	font-weight: normal !important; 
+	font-weight: normal !important;
 	font-size: 14px !important;
 }
 
@@ -502,7 +502,7 @@ header .form{
 	color:#666 !important;
 	text-shadow:none !important;
 	background:#fafafa !important;
-	border-bottom:1px solid #eee;	
+	border-bottom:1px solid #eee;
 }
 
 .dropdown-menu a:hover,.dropdown-menu a:focus{
@@ -919,7 +919,7 @@ padding:6px 0;
 line-height:17px;
 font-size:13px;
 }
- 
+
 .paging span, .paging a {
 display:block;
 float:left;
@@ -932,11 +932,11 @@ background: #fff;
 border:1px solid #ddd;
 font-weight:normal;
 }
- 
+
 .paging a:hover{
 color:#fff;
 }
- 
+
 .paging .current{
 padding:5px 8px;
 color:#fff;
@@ -1384,15 +1384,15 @@ padding-top: 5px;
 .flexslider {
 	background: transparent;
 	min-height: 300px;
-	margin: 0 0 0px; 
-	border: 0px; 
-	border-radius: 0px; 
+	margin: 0 0 0px;
+	border: 0px;
+	border-radius: 0px;
 	box-shadow: none;
 	color: #fff;
 }
 
 .flex-direction-nav .flex-next {
-right: 5px !important; 
+right: 5px !important;
 }
 
 .flex-direction-nav .flex-prev {
@@ -1460,7 +1460,7 @@ left: 5px !important;
 ul.hover-block li{
 	list-style:none;
 	float:left;
-	width:225px; 
+	width:225px;
 	height: 170px;
 	position: relative;
 	margin: 5px 4px;
@@ -1475,8 +1475,8 @@ ul.hover-block li a {
 	color: #000;
 }
 
-ul.hover-block li a { 
-	text-decoration: none; 
+ul.hover-block li a {
+	text-decoration: none;
 }
 
 ul.hover-block li .hover-content{
@@ -2026,7 +2026,7 @@ footer .copy{
    .price-b{
    width:100%;
    float:none;
-   }    
+   }
    .aboutus{
    	text-align: center;
    }
@@ -2055,7 +2055,7 @@ footer .copy{
  	}
  	.dropdown-menu a{
  		border: 0px !important;
- 	}	
+ 	}
 	.home-product{
 		margin-top: 10px;
 	}
@@ -2068,7 +2068,7 @@ footer .copy{
 	}
 	.flex-caption{
 		margin: 40px 0px 40px 0px;
-	}	
+	}
 	.formy{
 		margin-top: 20px;
 	}
@@ -2113,4 +2113,9 @@ footer .copy{
 }
 #main-sidebar h5{
 	margin-bottom:0;
+}
+
+ul.disc-list {
+	list-style-type: disc;
+    margin-left:30px;
 }

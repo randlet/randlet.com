@@ -14,14 +14,14 @@
 
     <div class="row tasks">
         <div class="span12">
-    
+
             <h3>{{category}}</h3>
             {% for item in items %}
-    
+
                 <div class="task cool">
                     <h6>{{item.title|safe}}</h6>
                     <div class="tmeta">
-                        <i class="icon-group"></i> {{item.authors|safe }} <i class="icon-calendar"></i> {{item.date}} <i class="icon-globe"></i> {{ item.location|safe }}                        
+                        <i class="icon-group"></i> {{item.authors|safe }} <i class="icon-calendar"></i> {{item.date}} <i class="icon-globe"></i> {{ item.location|safe }}
                     </div>
                     {% if item.note %}
                         <div class="tmeta">
@@ -34,13 +34,13 @@
                         {% endif %}
                         {% if item.url %}
                             <a href="{{item.url}}"><i class="icon-link"></i> Link</a>
-                        {% endif %}                        
+                        {% endif %}
                     </p>
                 </div>
             {% endfor %}
         </div>
     </div>
 {% endfor %}
-    
+
 
 {% endblock %}

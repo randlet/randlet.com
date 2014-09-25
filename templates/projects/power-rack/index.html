@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block page_title %}Home built power rack{% endblock %}
+{% block description %}A low cost homebuilt wooden power rack.{% endblock %}
+{% block keywords %}power rack wooden homemade 4x4{%endblock%}
+
+{% block hero_content %}
+    <h2>A Homemade Wooden Power Rack</h2>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="span9">
+        <p>
+            I'm starting to do some barbell training (using Mark Rippetoe's
+            <a href="http://www.amazon.com/gp/product/B006XJR5ZA/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B006XJR5ZA&linkCode=as2&tag=canaamp05-20&linkId=H3KIKZXJUF5RQEXA">Starting Strength</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=canaamp05-20&l=as2&o=1&a=B006XJR5ZA" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            program) and rather than join a gym or buy a metal power rack,
+            I decided to weights and build a power rack in my basement out of 4x4's, 2x4's and 2x6's.
+        </p>
+
+        <p>
+            It is a fairly simple project if you have even a little woodworking experience.  The only
+            tools I used were a circular saw and cordless drill.  Using a table saw and drill press
+            would have probably been better, but you have to use what you have available.  If you take
+            your time you can get everything cut quite square and make a very stable structure.
+        </p>
+
+        <p>
+            Most of the credit for the design belongs to
+            <a href="http://www.home-gym-bodybuilding.com/homemade-power-rack.html" title="Original homemade power rack instructions">Aaron Gipperic</a>
+            (check the comments on that page for many more examples!)
+            who built a power rack using two 2x6's screwed together as posts.
+            Although I leaned heavily on his design, I made a few modifications to
+            cut down on my cost/labour.  In particular I used 4x4's for the posts
+            and 2x4's for the rest of the frame and bracing while Aaron used 2x6's
+            almost everywhere.  He also used lag bolts for some of the assembly
+            while I used
+            <a href="http://www.fastenmaster.com/structural-screws-lok-line-faqs.html"
+            title="Explanation about structural screws">structural screws</a>.
+            The structural screws are super easy to use and don't require drilling pilot holes
+            like lags usually do. I also screwed mine directly to the floor joists in the
+            ceiling which improved lateral stability quite a bit.
+        </p>
+
+        <p>
+            In general, Aaron's design is quite a bit more beefy but I have loaded mine with
+            close to 500lbs of weight and it remained rock steady. The compressive axial load of
+            a single 4x4 is <a href="http://www2.wwpa.org/portals/9/docs/pdf/tn9.pdf">in the 1000's of pounds</a>
+            So the only real concern I would have is the safety pins failing if an extremely heavy
+            load was dropped on them. I don't anticipate ever squatting more than a few hundred pounds
+            so the 1" OD galvanized pipes I used as safety pins should be more than capable of handling that
+            load.
+        </p>
+
+        <h4>Materials List</h4>
+        <p>
+            A complete list of materials that I used:
+
+            <ul class="disc-list">
+                <li>4 4x4x8's for the posts cut to 78"</li>
+                <li>1 2x6x8 for the two bottom platforms that the 4x4's sit on</li>
+                <li>6 2x4x8's for the rest of the frame and bracing</li>
+                <li>~130 <a href="http://www.homedepot.ca/product/8-x-3-construction-screws-gold/908155">#8 3" construction screws</a></li>
+                <li>2 4' 3/4" galvanized pipes for the safety pins</li>
+                <li>6 45&deg; 3/4" galvanized elbows</li>
+                <li>6 6"x3/4" galvanized pipes</li>
+                <li>6 3/4" galvanized end caps</li>
+            </ul>
+
+            the last three items being used to create the hooks for racking the bar, for squats,
+            bench press and overhead press outside the cage. Total cost was roughly $180.
+        </p>
+        <p>
+            Check Aaron's post linked above for detailed blueprints which you can modify to suit your needs/space.
+        </p>
+
+        <h4>Pictures &amp; Video</h4>
+
+        <p>
+            Heres a few pictures of the project.  Sorry for the not so great quality :)
+        </p>
+
+        <h6>Wood ready for cutting</h6>
+        <p>
+            <img src="{{ url_for('static', filename='img/projects/power_rack/materials.jpg') }}" alt="Wood ready for cutting"/>
+        </p>
+
+        <h6>Wood cut, holes drilled, and ready for assemlby in the basement</h6>
+        <p>
+            <img src="{{ url_for('static', filename='img/projects/power_rack/ready_for_assembly.jpg') }}" alt="Ready for assembly"/>
+        </p>
+
+        <h6>First frame assembled</h6>
+        <p>
+            <img src="{{ url_for('static', filename='img/projects/power_rack/first_frame_complete.jpg') }}" alt="First frame assembled"/>
+        </p>
+
+        <h6>Two frames joined together by cross braces</h6>
+        <p>
+            <img src="{{ url_for('static', filename='img/projects/power_rack/basic_frame.jpg') }}" alt="Two sides joined toegether"/>
+        </p>
+
+        <h6>Final assembly - side view with view of braces running to floor joists</h6>
+        <p>
+            <img src="{{ url_for('static', filename='img/projects/power_rack/frame_with_bracing.jpg') }}" alt="Final power rack assembly side view"/>
+        </p>
+
+        <h6>Final assembly - front view with pull-up bar</h6>
+        <p>
+            <img src="{{ url_for('static', filename='img/projects/power_rack/complete.jpg') }}" alt="Final power rack assembly front view with view of pull up bar"/>
+        </p>
+
+        <h6>One of my first sets of squats in the cage!</h6>
+        <p>
+            <iframe width="560" height="315" src="//www.youtube.com/embed/sQszxkVNm00" frameborder="0" allowfullscreen></iframe>
+        </p>
+
+        <h4>Conclusion</h4>
+
+        <p>
+            This was a fun low cost (~$180), low level-of-difficulty project. All
+            together it took me probably 5 or 6 hours spread out over a few days.
+            Most importantly it got me excited about starting to lift!
+        </p>
+
+
+
+    </div>
+    <div id="main-sidebar" class="span3">
+
+        <div class="row-fluid">
+            <div class="span12">
+                <h5>About</h5>
+                <hr/>
+                <img width="300" height="177" src="{{url_for('static',filename='img/profile3.jpg')}}" alt="Profile Picture"/>
+                {% include "_about_blurb.html" %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% include "_disqus.html" %}
+
+{% endblock %}
