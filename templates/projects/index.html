@@ -21,9 +21,11 @@
                     <h4>{{props.title}}</h4>
                     <h6 class="grey">{{props.subtitle}}</h6>
                     <div class="">
+                        <ul>
                         {% for l in props.links%}
-                            <a href="{{l.href}}" class="tip" data-original-title="{{l.title}}"><i class="{{l.icon}}"></i>{{l.text}}</a>
+                            <li><a href="{{l.href}}" class="tip" data-original-title="{{l.title}}"><i class="{{l.icon}}"></i>{{l.text}}</a></li>
                         {% endfor %}
+                        </ul>
                     </div>
                  </div>
                </div>
@@ -36,7 +38,7 @@
             </div>
          </div>
          {% if not loop.last %}
-            <hr/>    
+            <hr/>
          {% endif %}
     {% endfor %}
 {% endblock %}

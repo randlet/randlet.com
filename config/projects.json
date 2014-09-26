@@ -1,0 +1,112 @@
+[
+    {
+        "slug": "qatrack",
+        "symbol": "Qa",
+        "title": "QATrack+",
+        "subtitle": "A Radiotherapy QA Tool",
+        "description": "QATrack+ is a free and open source tool written in Python for recording and monitoring the quality control program of a radiotherapy clinic. <br/><br/> Live demo user/password are demo/demo.",
+        "links": [
+
+            {
+                "icon": "icon-home",
+                "href": "http://qatrackplus.com",
+                "text": "Homepage",
+                "title": "The QATrack+ project homepage"
+            },
+            {
+                "icon": "icon-play",
+                "href": "/qatrack/",
+                "text": "Live Demo ",
+                "title": "Try a live demo of QATrack+"
+            },
+            {
+                "icon": "icon-edit",
+                "href": "http://bitbucket.org/tohccmedphys/qatrackplus/",
+                "text": "Source",
+                "title": "Download the source code"
+            }
+        ]
+    },
+    {
+        "slug":"rxcheck",
+        "symbol": "Rx",
+        "title": "RxCheck",
+        "subtitle": "Patient Specific DVH QA",
+        "description": "RxCheck is web application I built at The Ottawa Hospital Cancer Centre to do patient specific quality assurance checks (dosimetry constraints) on radiation therapy treatments using dose volume histogram data. <br/> <em>RxCheck is still under development and all rights to the code belong to The Ottawa Hospital Cancer Centre</em>.<br/>Live demo coming soon.",
+        "links": [
+
+            {
+                "icon": "icon-play",
+                "href": "#",
+                "text": "Live Demo Coming Soon",
+                "title": "Try a live demo of RxCheck"
+            }
+        ]
+    },
+    {
+        "slug":"sails",
+        "symbol": "Sa",
+        "title": "SaILS",
+        "subtitle": "Safety and Incident Learning System",
+        "description": "SaILS is a <strong>Sa</strong>fety and <strong>I</strong>ncident <strong>L</strong>earning <strong>S</strong>ystem for recording, investigating and summarizing incidents occuring in a radiation therapy clinic.<br/> <em>SaILS is in use at The Ottawa Hospital Cancer Centre and all rights to the code belong to TOHCC</em> <br/> Live demo coming soon.",
+        "links": [
+            {
+                "icon": "icon-play",
+                "href": "#",
+                "text": "Live Demo Coming Soon",
+                "title": "Try a live demo of SaILS"
+            },
+            {
+                "icon": "icon-edit",
+                "href": "http://bitbucket.org/tohccmedphys/sails/",
+                "text": "Source",
+                "title": "Download the source code"
+            }
+        ]
+    },
+    {
+        "slug":"orbis",
+        "symbol": "Or",
+        "title": "Orbis",
+        "subtitle": "Simple Huckel Molecular Orbital Calculations",
+        "description": "Orbis is a free and open source program for performing simple Huckel molecular orbital calculations.",
+        "links": [
+            {
+                "icon": "icon-download",
+                "href": "/static/downloads/install_orbis.exe",
+                "text": "Installer",
+                "title": "Download a Windows installer"
+            },
+            {
+                "icon": "icon-github",
+                "href": "http://github.com/randlet/orbis/",
+                "text": "Source",
+                "title": "Download the source code"
+            }
+        ]
+    },
+    {
+        "slug": "randlet.com",
+        "symbol": "Ra",
+        "title": "randlet.com",
+        "subtitle": "Personal Homepage written with Flask/Frozen Flask",
+        "description": "Source code for the webpage you're currently visiting :)",
+        "links": [
+            {
+                "icon": "icon-edit",
+                "href": "https://github.com/randlet/randlet.com/",
+                "text": "Source",
+                "title": "Download the source code"
+            }
+        ]
+    },
+    {
+        "slug": "power-rack",
+        "symbol": "PR",
+        "title": "Power Rack",
+        "subtitle": "A homemade wooden power rack",
+        "description": "A wooden power rack I built so that I could begin barbell training.",
+        "links": []
+    }
+]
+

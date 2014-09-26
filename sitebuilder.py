@@ -1,11 +1,13 @@
 import collections
 import datetime
 import itertools
+import json
 import sys
 import PyRSS2Gen
 from flask import Flask, Response, render_template, abort, url_for
 from flask_flatpages import FlatPages, pygments_style_defs
 from flask_frozen import Freezer
+from jinja2 import Markup
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -19,177 +21,16 @@ sorted_pages = sorted(pages, key=lambda p: p.meta["date"], reverse=True)
 freezer = Freezer(app)
 
 
-# TODO: move valid_projects & papers to json file
 valid_projects = collections.OrderedDict()
-
-valid_projects["qatrack"] = {
-    "symbol": "Qa",
-    "title": "QATrack+",
-    "subtitle": "A Radiotherapy QA Tool",
-    "description": "QATrack+ is an open source tool written in Python for recording and monitoring the quality control program of a radiotherapy clinic",
-    "links": [
-        {
-            "icon": "icon-play",
-            "href": "/qatrack/",
-            "text": "Live Demo",
-            "title": "Try a live demo of QATrack+",
-        },
-        {
-            "icon": "icon-edit",
-            "href": "http://bitbucket.org/tohccmedphys/qatrackplus/",
-            "text": "Source",
-            "title": "Download the source code",
-        },
-    ],
-}
-
-valid_projects["orbis"] = {
-    "symbol": "Or",
-    "title": "Orbis",
-    "subtitle": "Simple Huckel Molecular Orbital Calculations",
-    "description": "Orbis is a free and open source program for performing simple Huckel molecular orbital calculations.",
-    "links": [
-        {
-            "icon": "icon-download",
-            "href": "/static/downloads/install_orbis.exe",
-            "text": "Installer",
-            "title": "Download a Windows installer",
-        },
-        {
-            "icon": "icon-github",
-            "href": "http://github.com/randlet/orbis/",
-            "text": "Source",
-            "title": "Download the source code",
-        },
-    ],
-}
-
-valid_projects["randlet.com"] = {
-
-    "symbol": "Ra",
-    "title": "randlet.com",
-    "subtitle": "Personal Homepage written with Flask/Frozen Flask",
-    "description": "Source code for the webpage you're currently visiting :)",
-    "links": [
-        {
-            "icon": "icon-edit",
-            "href": "https://bitbucket.org/randlet/randlet.com/",
-            "text": "Source",
-            "title": "Download the source code",
-        },
-    ],
-}
-
-
-valid_projects["power-rack"] = {
-
-    "symbol": "PR",
-    "title": "Power Rack",
-    "subtitle": "A homemade wooden power rack",
-    "description": "A wooden power rack I built so that I could begin barbell training.",
-    "links": [],
-}
+for proj in json.load(open("config/projects.json")):
+    proj['description'] = Markup(proj['description'])
+    valid_projects[proj['slug']] = proj
 
 
 papers = collections.OrderedDict()
-
-papers["Papers"] = [
-    {
-        "file": "Ta06b.pdf",
-        "title": "Benchmarking BrachyDose: voxel-based EGSnrc Monte Carlo calculations of TG&mdash;43 dosimetry parameters",
-        "authors": "R. E. P. Taylor, G. Yegin, D. W. O. Rogers",
-        "date": "2007",
-        "location": "Med. Phys., 34, 445 &mdash; 457",
-    },
-    {
-        "file": "TR08.pdf",
-        "title": "More accurate fitting of <sup>125</sup>I and <sup>103</sup>Pd radial dose functions",
-        "authors": "R. E. P. Taylor, D. W. O. Rogers",
-        "date": "2008",
-        "location": "Med. Phys., 35, 4242 &mdash; 4250",
-    },
-    {
-        "file": "TR08b.pdf",
-        "title": "An EGSnrc Monte Carlo-calculated database of TG-43 parameters",
-        "authors": "R. E. P. Taylor, D. W. O. Rogers",
-        "date": "2008",
-        "location": "Med. Phys., 35, 4228 &mdash; 4241",
-    },
-    {
-        "file": "TR08c.pdf",
-        "title": "EGSnrc Monte Carlo calculated dosimetry parameters for 192Ir and 169Yb brachytherapy sources",
-        "authors": "R. E. P. Taylor, D. W. O. Rogers",
-        "date": "2008",
-        "location": "Med. Phys., 35, 4933 &mdash; 4944",
-    },
-
-    {
-        "url": "http://people.physics.carleton.ca/~drogers/pubs/papers/Th08.pdf",
-        "title": "Monte Carlo dosimetry for I and Pd eye plaque brachytherapy",
-        "authors": "R. M. Thomson, R. E. P. Taylor and D. W. O. Rogers",
-        "date": "2008",
-        "location": "Med. Phys., 35, 5530 &mdash; 5543",
-    },
-]
-
-papers["Talks & Conference Presentations"] = [
-    {
-        "file": "opag-24-oct-2013.zip",
-        "title": "Python at The Ottawa Hospital Cancer Centre",
-        "authors": "R. E. Taylor",
-        "date": "24 Oct 2013",
-        "location": "Ottawa Python Authors Group Monthly Meeting, Ottawa, Ontario",
-    },
-    {
-        "file": "mcgill-4-oct-2013.zip",
-        "title": "Leveraging Software To Improve Quality In The Clinic",
-        "authors": "R. E. Taylor",
-        "date": "4 Oct 2013",
-        "location": "McGill Medical Physics Department, Montreal General Hospital, Montreal, Quebec",
-    },
-    {
-        "file": "odette-17-may-2013.zip",
-        "title": "QATrack+: A free and open source tool for radiotherapy quality assurance",
-        "authors": "R. E. Taylor",
-        "date": "17 May 2013",
-        "location": "Odette Cancer Centre, Sunnybrook Hospital, Toronto, Ontario",
-    },
-    {
-        "file": "qatrackplus_comp_ws_2013.pdf",
-        "title": "QATrack+: A free and open source tool for radiotherapy quality assurance",
-        "authors": "R. E. Taylor, C. Angers, D. La Russa, R. Studinski, D. Mason, B. Clark",
-        "date": "27 Jan 2013",
-        "location": "COMP Winter School, Mt. Tremblant, Quebec",
-    },
-
-    {
-        "file": "rtaylor_mcgill_bd.pdf",
-        "title": "An EGSnrc generated TG-43 dosimetry parameter database",
-        "authors": "R E P Taylor and D W O Rogers",
-        "date": "2007",
-        "location": "Monte Carlo Workshop, McGill University",
-    },
-
-    {
-        "file": "aapm_final_rtaylor.pdf",
-        "url": "http://online.medphys.org/resource/1/mphya6/v33/i6/p2205_s4",
-        "title": "Monte Carlo Modeling of the Xoft AXXENT X-Ray Source",
-        "authors": "R E P Taylor, G Yegin, and D W O Rogers",
-        "date": "2006",
-        "location": "AAPM 48<sup>th</sup> Annual Meeting, Orland, Florida",
-    },
-]
-
-papers["M.Sc. Thesis"] = [
-    {
-        "file": "thesis_no_xoft.pdf",
-        "title": "Monte Carlo Calculations for Brachytherapy",
-        "authors": "R. E. Taylor",
-        "date": "2006",
-        "location": "Thesis for my M.Sc.in Medical Physics supervised by D. W. O. Rogers at Carleton University",
-        "note": "Chapter 4 and a couple of other pages having to do with the Xoft source have been removed due to an NDA.",
-    },
-]
+papers["Papers"] = json.load(open("config/papers.json"))
+papers["Talks & Conference Presentations"] = json.load(open("config/presentations.json"))
+papers["M.Sc. Thesis"] = json.load(open("config/thesis.json"))
 
 
 @app.context_processor

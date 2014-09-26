@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block page_title %}SaILS{% endblock %}
+{% block hero_content%}
+    <div class="row">
+        <div class="span12">
+            <h1>SaILS</h1>
+            <h6 class="grey">Safety &amp; Incident Learning System</h6>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="span7">
+
+        <p>
+            <em>Note all work on SaILS was completed while working at The Ottawa
+            Hospital Cancer Centre.  All rights to the code belong to TOHCC.
+            The demonstration version on this site is available with their
+            permission.</em>
+
+        </p>
+        <h4>Tech Used</h4>
+
+
+        <p>
+            A selection of the tech that SaILS is built with:
+
+            <ul class="disc-list">
+                <li>Python &amp; Django</li>
+                <li>jQuery</li>
+                <li>Bootstrap 3</li>
+            </ul>
+
+            SaILS can be deployed on Linux, Windows or Mac servers.
+
+        </p>
+
+        <h4>About</h4>
+
+        <p>
+            SaILS is an incident learning system custom built for the needs of the
+            radiation medicine program at The Ottawa Hospital Cancer Centre.  It
+            allows staff anywhere within the clinic to submit an incident report
+            from any device with access to the hospital network (Fig 1).
+        </p>
+        <p>
+            SaILS also facilitates the triaging and investigation of incidents
+            by allowing incidents to be assigned to specific investigators.
+            The results of the investigation are recorded in SaILS (Fig 2.) and can be
+            reviewed at any time in the future (Fig 3.).  Follow-up actions (e.g. implement
+            a new interlock) can be assigned and tracked until they are completed.
+        </p>
+        <p>
+            Aggregates statistics (Fig 4.) about all the incidents occuring in a given
+            calendar year are made available to all staff within the clinic.
+            This makes it very easy to spot trends in the types of incidents
+            which are ocurring in the clinic allowing staff to decide where
+            to focus their efforts in improving clinical practices.
+        </p>
+
+        <p>
+            All incident data from SaILS can easily be exported to Excel or CSV
+            format for easier data mining.
+        </p>
+
+
+        <h4>Live Demo</h4>
+
+        <p>
+            A live demo of SaILS will be online very soon.
+            <!--
+            I run a live demo version of QATrack+ running at <a href="http://randlet.com/qatrack/" title="QATrack+
+            Demo">randlet.com/qatrack/</a>.  To login use the following credentials:
+            <dl class="dl-horizontal">
+                <dt>Username</dt>
+                <dd>demo</dd>
+                <dt>Password</dt>
+                <dd>demo</dd>
+                <dt></dt><dd class="button"><a href="/qatrack/accounts/login/">Log In To Demo</a></dd>
+            </dl>
+            -->
+        </p>
+
+        <h4>More Info</h4>
+
+        <p>
+            For more information on this project please contact Crystal Angers at TOH. If you email me, I can put you in touch with him.
+        </p>
+
+    </div>
+    <div class="span5">
+        <h4>Figures</h4>
+        <p>
+            <em>Click on any of the figures for high res versions.</em>
+        </p>
+
+        <p>
+            <caption>Fig 1. Reporting an incident in SaILS</caption>
+            <a href="{{ url_for('static', filename='img/projects/sails/report.png') }}" title="Click for high res version">
+                <img style="" src="{{ url_for('static', filename='img/projects/sails/report.png') }}" alt="Report an incident in SaILS"/>
+            </a>
+        </p>
+
+        <p>
+
+            <caption>Fig 2. Investigating an incident in SaILS </caption>
+            <a href="{{ url_for('static', filename='img/projects/sails/investigate.png') }}" alt="Click for higher res version">
+                <img style="" src="{{ url_for('static', filename='img/projects/sails/investigate.png') }}" alt="Recording investigation notes in SaILS"/>
+            </a>
+        </p>
+
+        <p>
+            <caption>Fig 3. Review past incident in SaILS</caption>
+            <a href="{{ url_for('static', filename='img/projects/sails/review.png') }}" alt="Click for higher res version">
+                <img style="" src="{{ url_for('static', filename='img/projects/sails/review.png') }}" alt="Review past incidents in SaILS"/>
+            </a>
+        </p>
+        <p>
+            <caption>Fig 4. Incident statistics for a calendar year</caption>
+            <a href="{{ url_for('static', filename='img/projects/sails/stats.png') }}" alt="Click for higher res version">
+                <img style="" src="{{ url_for('static', filename='img/projects/sails/stats.png') }}" alt="Review statistics for incidents in the clinic"/>
+            </a>
+        </p>
+
+    </div>
+</div>
+
+{% include "_disqus.html" %}
+
+{% endblock %}

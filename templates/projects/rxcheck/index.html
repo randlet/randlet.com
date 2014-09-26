@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block page_title %}RxCheck{% endblock %}
+{% block hero_content%}
+    <div class="row">
+        <div class="span12">
+            <h1>RxCheck</h1>
+            <h6 class="grey">A tool for patient specific dose volume histogram QA</h6>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="span7">
+
+        <p>
+            <em>Note all work on RxCheck was completed while working at The Ottawa
+            Hospital Cancer Centre.  All rights to the code belong to TOHCC.
+            The demonstration version on this site is available with their
+            permission.</em>
+
+        </p>
+        <h4>Tech Used</h4>
+
+        <p>
+            A selection of the tech that RxCheck is built with:
+
+            <ul class="disc-list">
+                <li>Python &amp; Django</li>
+                <li>Fabric</li>
+                <li>numpy, scipy, pandas</li>
+                <li>Knockout.js</li>
+                <li>jQuery</li>
+                <li>Flot</li>
+                <li>Bootstrap 3</li>
+            </ul>
+
+            RxCheck can be deployed on Linux, Windows or Mac servers.
+        </p>
+
+        <h4>About</h4>
+
+        <p>
+            RxCheck is a web application built to do semi-automated quality
+            assurance checks on radiotherapy treatments.  It works by importing
+            dose volume histograms from treatment planning systems and
+            comparing the radiation dose in patients organs and target volumes
+            to predefined dosimetry constraints defined by the patients
+            careplan.
+        </p>
+        <p>
+            For example a Careplan for a prostate patient might inclue the following
+            constraints:
+            <ul class="disc-list">
+
+                <li>PTV_7600:V7600cGy &ge; 95.0%</li>
+                <li>PTV_7600:V7220cGy &ge; 98.0%</li>
+                <li>PTV_7600:V8132cGy &le; 2.0%:</li>
+                <li>PTV_6000:V6000cGy &ge; 95.0%</li>
+                <li>PTV_6000:V5700cGy &ge; 98.0%</li>
+                <li>CTV_7600:V7600cGy &ge; 100.0%</li>
+                <li>CTV_6000:V6000cGy &ge; 100.0%</li>
+                <li>Femur_L:V5000cGy &le; 5.0%</li>
+                <li>Femur_R:V5000cGy &le; 5.0%</li>
+                <li>Rectum:V7500cGy &le; 15.0%</li>
+                <li>Rectum:V7000cGy &le; 25.0%</li>
+                <li>Rectum:V6500cGy &le; 35.0%</li>
+            </ul>
+
+            RxCheck allows you to easily import a patients DVH data and
+            automatically check them against these constratins (Fig 2.). Careplan
+            constraints can be skipped when not relevant and ad-hoc constraints can
+            be added on the fly for special cases.
+
+        </p>
+
+        <p>
+
+            RxCheck also allows you to save patient plans and generate
+            aggregate statistics about how well your treatment plans are
+            conforming to Careplans on average across your clinic (Fig 3).
+
+        </p>
+
+        <h4>Treatment planning systems</h4>
+        <p>
+
+            A flexible architecture (Fig 1.) has been used to make it very simple to add
+            support for any treatment planning system or other sources of DVH
+            data with very little code.  Currently importing backends for
+            Monaco, XiO and Tomotherapy treatment planning systems.
+
+        </p>
+
+
+        <h4>Live Demo</h4>
+
+        <p>
+            A live demo of RxCheck will be online very soon.
+            <!--
+            I run a live demo version of QATrack+ running at <a href="http://randlet.com/qatrack/" title="QATrack+
+            Demo">randlet.com/qatrack/</a>.  To login use the following credentials:
+            <dl class="dl-horizontal">
+                <dt>Username</dt>
+                <dd>demo</dd>
+                <dt>Password</dt>
+                <dd>demo</dd>
+                <dt></dt><dd class="button"><a href="/qatrack/accounts/login/">Log In To Demo</a></dd>
+            </dl>
+            -->
+        </p>
+
+        <h4>More Info</h4>
+
+        <p>
+            For more information on this project please contact Dan La Russa at TOH. If you email me, I can put you in touch with him.
+        </p>
+
+    </div>
+    <div class="span5">
+        <h4>Figures</h4>
+        <p>
+            <em>Click on any of the figures for high res versions.</em>
+        </p>
+
+        <p>
+            <caption>Fig 1. RxCheck Architechture</caption>
+            <a href="{{ url_for('static', filename='img/projects/rxcheck/architecture.png') }}" title="Click for high res version">
+                <img style="" src="{{ url_for('static', filename='img/projects/rxcheck/architecture.png') }}" alt="RxCheck Architechture"/>
+            </a>
+        </p>
+
+        <p>
+
+            <caption>Fig 2. RxCheck Plan Check of a prostrate treatment</caption>
+            <a href="{{ url_for('static', filename='img/projects/rxcheck/patient_check.png') }}" alt="Click for higher res version">
+                <img style="" src="{{ url_for('static', filename='img/projects/rxcheck/patient_check.png') }}" alt="Checking a plan in RxCheck"/>
+            </a>
+        </p>
+
+        <p>
+            <caption>Fig 3. RxCheck Statistics</caption>
+            <a href="{{ url_for('static', filename='img/projects/rxcheck/stats.png') }}" alt="Click for higher res version">
+                <img style="" src="{{ url_for('static', filename='img/projects/rxcheck/stats.png') }}" alt="RxCheck statistics page"/>
+            </a>
+        </p>
+
+    </div>
+</div>
+
+{% include "_disqus.html" %}
+
+{% endblock %}

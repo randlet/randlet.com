@@ -1,0 +1,38 @@
+[
+    {
+        "file": "Ta06b.pdf",
+        "title": "Benchmarking BrachyDose: voxel-based EGSnrc Monte Carlo calculations of TG&mdash;43 dosimetry parameters",
+        "authors": "R. E. P. Taylor, G. Yegin, D. W. O. Rogers",
+        "date": "2007",
+        "location": "Med. Phys., 34, 445 &mdash; 457"
+    },
+    {
+        "file": "TR08.pdf",
+        "title": "More accurate fitting of <sup>125</sup>I and <sup>103</sup>Pd radial dose functions",
+        "authors": "R. E. P. Taylor, D. W. O. Rogers",
+        "date": "2008",
+        "location": "Med. Phys., 35, 4242 &mdash; 4250"
+    },
+    {
+        "file": "TR08b.pdf",
+        "title": "An EGSnrc Monte Carlo-calculated database of TG-43 parameters",
+        "authors": "R. E. P. Taylor, D. W. O. Rogers",
+        "date": "2008",
+        "location": "Med. Phys., 35, 4228 &mdash; 4241"
+    },
+    {
+        "file": "TR08c.pdf",
+        "title": "EGSnrc Monte Carlo calculated dosimetry parameters for 192Ir and 169Yb brachytherapy sources",
+        "authors": "R. E. P. Taylor, D. W. O. Rogers",
+        "date": "2008",
+        "location": "Med. Phys., 35, 4933 &mdash; 4944"
+    },
+
+    {
+        "url": "http://people.physics.carleton.ca/~drogers/pubs/papers/Th08.pdf",
+        "title": "Monte Carlo dosimetry for I and Pd eye plaque brachytherapy",
+        "authors": "R. M. Thomson, R. E. P. Taylor and D. W. O. Rogers",
+        "date": "2008",
+        "location": "Med. Phys., 35, 5530 &mdash; 5543"
+    }
+]
