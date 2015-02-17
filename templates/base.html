@@ -119,6 +119,7 @@
     <!-- JS -->
     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    {% block extra_script_base %}{% endblock %}
 
     {#
     <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
