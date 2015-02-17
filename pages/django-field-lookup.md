@@ -25,8 +25,8 @@ we have the following models:
 
     class Staff(models.Model):
 
-        first_name = models.CharField(max_length=255, help_text=_("Enter the name of the staff being rounded"))
-        last_name = models.CharField(max_length=255, help_text=_("Enter the name of the staff being rounded"))
+        first_name = models.CharField(max_length=255)
+        last_name = models.CharField(max_length=255)
 
         department = models.ForeignKey(Department)
 
@@ -34,7 +34,7 @@ we have the following models:
 
 I needed a function that would take a string like
 `department__business__business_type` and return
-the Business.name
+the Business.type
 `<django.db.models.fields.IntegerField: business_type>`
 field (I needed to access the `choices` attribute of fields).
 
@@ -73,7 +73,7 @@ Here's a short function which will do that sort of lookup:
     >> find_field(Staff, "department__business__business_type")
     <django.db.models.fields.IntegerField: business_type>
     >>
-    >> find_field(Staff, "department__business__business_type")
+    >> find_field(Staff, "department__business")
     <django.db.models.fields.related.ForeignKey: business>
     >>
     >> find_field(Staff, "department__foo")
