@@ -107,14 +107,6 @@
         "subtitle": "A homemade wooden power rack",
         "description": "A wooden power rack I built so that I could begin barbell training.",
         "links": []
-    },
-    {
-        "slug": "ballistic-deposition",
-        "symbol": "BD",
-        "title": "Ballistic Deposition",
-        "subtitle": "A demo using JavaScript &amp; Canvas",
-        "description": "A simple ballistic deposition demonstration using JavaScript &amp; canvas.",
-        "links": []
     }
 ]
 
