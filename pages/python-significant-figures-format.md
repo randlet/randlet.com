@@ -130,5 +130,5 @@ The code is [on GitHub](https://github.com/randlet/to-precision) and hopefully
 someone else finds this function useful.
 
 Update: [BebeSparkelSparkel](https://github.com/BebeSparkelSparkel/) has added more functionality
-to my original implementation.  His version can be found here: https://github.com/BebeSparkelSparkel/to-precision
+to my original implementation.  His version can be found here: [https://github.com/BebeSparkelSparkel/to-precision](https://github.com/BebeSparkelSparkel/to-precision).
 
