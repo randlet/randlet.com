@@ -2,7 +2,7 @@ title: Formatting floats to a specific number of significant digits in Python
 date: 2013-08-25
 tags: [python, javascript]
 blurb: A Python function for formatting floats to a specific number of significant digits. This is a port of Javascripts Number.toPrecision method.
-thumbnail: digits.jpg 
+thumbnail: digits.jpg
 attribution: http://www.flickr.com/photos/mulmatsherm/2221220246/
 
 Often when you are writing scientific code you want to display numbers with a
@@ -22,7 +22,7 @@ as follows:
 > General format. For a given precision p >= 1, this rounds the number to p
 > significant digits and then formats the result in either fixed-point format
 > or in scientific notation, depending on its magnitude.
-> 
+>
 > The precise rules are as follows: suppose that the result formatted with
 > presentation type 'e' and precision p-1 would have exponent exp. Then if -4
 > <= exp < p, the number is formatted with presentation type 'f' and
@@ -39,13 +39,13 @@ included. What actually happens is that Python trims that trailing zero even
 though it is a significant digit in this case. So when you try `"%.4G" %
 (1.230)` what you get is "1.23" with only 3 significant figures.
 
-I was playing around with some Javascript and noticed the 
-[Number.toPrecision](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision) 
+I was playing around with some Javascript and noticed the
+[Number.toPrecision](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision)
 method does precisely what we are looking for.  If you enter `(1.230).toPrecision(4)` in your
 Javascript console, Javascript will correctly print "1.230", likewise if you try
 `(123000000).toPrecision(4)` you will correctly get `"1.230e+8"`.
 
-I wanted to duplicate this behaviour in Python so I dug around in the 
+I wanted to duplicate this behaviour in Python so I dug around in the
 [WebKit source code for the toPrecision method](https://code.google.com/p/webkit-mirror/source/browse/JavaScriptCore/kjs/number_object.cpp)
 and ported it to Python as seen below:
 
@@ -128,4 +128,7 @@ significant digits always preserved!
 
 The code is [on GitHub](https://github.com/randlet/to-precision) and hopefully
 someone else finds this function useful.
+
+Update: [BebeSparkelSparkel](https://github.com/BebeSparkelSparkel/) has added more functionality
+to my original implementation.  His version can be found here: https://github.com/BebeSparkelSparkel/to-precision
 
